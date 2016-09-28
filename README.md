@@ -10,7 +10,13 @@ Spranger, M., Loetzsch, M., and Steels, L. (2012). A Perceptual System for Langu
 
 OR
 
-Spranger, M. (2008). World models for grounded language games. German diplom thesis, Humboldt-Universität zu Berlin.
+Spranger, M. (2008). World models for grounded language games. (Diplom) Master Thesis, Humboldt-Universität zu Berlin.
+
+This data has been used (among others) in the following publications
+
+Bleys, J., Loetzsch, M., Spranger, M., and Steels, L. (2009). The Grounded Color Naming Game. In Proceedings of the 18th IEEE International Symposium on Robot and Human Interactive Communication (Ro-man 2009).
+
+Spranger, M. and Beuls, K. (2016). Referential uncertainty and word learning in high-dimensional, continuous meaning spaces. In Hafner, V. and Pitti, A., editors, Development and Learning and Epigenetic Robotics (ICDL-Epirob), 2016 Joint IEEE International Conferences on, 2016. IEEE.
 
 LICENSE
 -------
