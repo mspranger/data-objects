@@ -1,4 +1,4 @@
-QRIO-DATA-OBJECTS
+DATA-QRIO-OBJECTS
 ================
 
 Object data recorded through sensorimotor systems of 2 QRIO robots. Data is available 
