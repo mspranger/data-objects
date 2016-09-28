@@ -1,0 +1,56 @@
+
+((object robot-1
+  ((image-schema (symbol robot)) (x (real 0.0)) (y (real 0.0))
+   (orientation (cyclic 0.5))))
+ (object robot-2
+  ((image-schema (symbol robot)) (x (real 650)) (y (real -720))
+   (orientation (cyclic 0.69))))
+ (object obj-60306
+  ((x (real 1072)) (y (real -90)) (z (real 0)) (width (real 56))
+   (height (real 313.064)) (average-y (real 77)) (stdev-y (real 5.83927))
+   (min-y (real 42)) (max-y (real 106)) (average-u (real 196))
+   (stdev-u (real 9.54499)) (min-u (real 148)) (max-u (real 215))
+   (average-v (real 128)) (stdev-v (real 1.41577)) (min-v (real 121))
+   (max-v (real 137))))
+ (object obj-60311
+  ((x (real 879)) (y (real 135)) (z (real 0)) (width (real 51.5))
+   (height (real 142.771)) (average-y (real 83)) (stdev-y (real 37.6919))
+   (min-y (real 33)) (max-y (real 154)) (average-u (real 103))
+   (stdev-u (real 10.6943)) (min-u (real 71)) (max-u (real 121))
+   (average-v (real 96)) (stdev-v (real 16.4408)) (min-v (real 60))
+   (max-v (real 121))))
+ (object obj-60313
+  ((x (real 1003)) (y (real -484)) (z (real 0)) (width (real 95.5))
+   (height (real 422.201)) (average-y (real 54)) (stdev-y (real 5.70459))
+   (min-y (real 24)) (max-y (real 87)) (average-u (real 198))
+   (stdev-u (real 5.13508)) (min-u (real 138)) (max-u (real 217))
+   (average-v (real 120)) (stdev-v (real 1.99067)) (min-v (real 107))
+   (max-v (real 128))))
+ (object obj-60315
+  ((x (real 505)) (y (real 246)) (z (real 0)) (width (real 83.5))
+   (height (real 411.802)) (average-y (real 102)) (stdev-y (real 12.7213))
+   (min-y (real 45)) (max-y (real 228)) (average-u (real 147))
+   (stdev-u (real 2.81108)) (min-u (real 134)) (max-u (real 173))
+   (average-v (real 67)) (stdev-v (real 4.87318)) (min-v (real 36))
+   (max-v (real 104))))
+ (object obj-60317
+  ((x (real 1129)) (y (real -705)) (z (real 0)) (width (real 94.5))
+   (height (real 172.22)) (average-y (real 115)) (stdev-y (real 17.9873))
+   (min-y (real 15)) (max-y (real 142)) (average-u (real 167))
+   (stdev-u (real 10.0399)) (min-u (real 127)) (max-u (real 206))
+   (average-v (real 68)) (stdev-v (real 15.7166)) (min-v (real 47))
+   (max-v (real 128))))
+ (object obj-60318
+  ((x (real 637)) (y (real -376)) (z (real 0)) (width (real 61))
+   (height (real 174.295)) (average-y (real 109)) (stdev-y (real 7.72389))
+   (min-y (real 81)) (max-y (real 129)) (average-u (real 161))
+   (stdev-u (real 5.7174)) (min-u (real 144)) (max-u (real 178))
+   (average-v (real 65)) (stdev-v (real 5.52874)) (min-v (real 54))
+   (max-v (real 94))))
+ (object obj-60322
+  ((x (real 636)) (y (real -348)) (z (real 0)) (width (real 93.5))
+   (height (real 442.575)) (average-y (real 81)) (stdev-y (real 27.5334))
+   (min-y (real 39)) (max-y (real 133)) (average-u (real 183))
+   (stdev-u (real 19.6812)) (min-u (real 134)) (max-u (real 214))
+   (average-v (real 95)) (stdev-v (real 27.3422)) (min-v (real 53))
+   (max-v (real 127)))))

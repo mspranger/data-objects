@@ -1,0 +1,1846 @@
+<html><head><title>data set "qrio-1"</title>
+<style type="text/css">
+table.physical-robot-scene { margin-top:0px; padding-top:6px; margin-bottom:30px; }
+.physical-robot-scene td.wm { border:1px dashed #bbb; vertical-align:top;width:504px;
+    height:354px; }
+.physical-robot-scene img.bg-image { position:absolute; width:500px; height: 350px; margin:0px;
+   top:0px; left:0px;}
+.physical-robot-scene td.separator { width:5px;height:5px; }
+.physical-robot-scene div.scene-title { font-size:14px; font-weight:bold; position:absolute;
+   top:5px; left:5px; }
+.physical-robot-scene div.success-counters { font-size:14px; position:absolute; top:5px; left:5px; }
+.physical-robot-scene div.robot-label { position:absolute; top:5px; font-size:14px; right:5px;}
+.physical-robot-scene div.object-label { position:absolute; margin-top:-7px; margin-left:15px;
+   padding:0px; background-color:#fff; font-size: 12px; 
+   filter:alpha(opacity=50); -moz-opacity:.50; opacity:.50; }
+.physical-robot-scene div.word-label { position:absolute; margin-top:6px; margin-left:15px;
+   padding:0px; background-color:#fff; font-size: 12px; color:#00f;font-style:italic;
+   filter:alpha(opacity=50); -moz-opacity:.50; opacity:.50; }
+.physical-robot-scene div.meaning-label { position:absolute; margin-top:-19px; margin-left:15px;
+   padding:0px; background-color:#fff; font-size: 12px; color:#a00;
+   filter:alpha(opacity=50); -moz-opacity:.50; opacity:.50; }
+.physical-robot-scene div.cross-1, .physical-robot-scene div.cross-2 { position:absolute;
+   background-color: #000; border:1px solid #fff; 
+   filter:alpha(opacity=50); -moz-opacity:.50; opacity:.50; }
+.physical-robot-scene div.cross-1 { height:1px; width:30px; margin-left: -17px; margin-top:-2px; }
+.physical-robot-scene div.cross-2 { height:30px; width:1px; margin-top: -17px; margin-left:-2px;}
+.physical-robot-scene td.image { vertical-align:top; height:83px;}
+.physical-robot-scene .image div { position:relative; }
+.physical-robot-scene .image img  { position:absolute; top:-55px; right:10px; }
+.physical-robot-scene td.world-model { border:1px dashed #bbb; background: #fff;
+   vertical-align:top; padding:5px;}
+.physical-robot-scene .world-model pre { font-size:12px; margin:0px;}
+
+</style>
+<style type="text/css">
+#menu { position:fixed;left: 10px;right: 1020px;font-size:14px;}
+.menu-title { font-weight:bold; margin-top:15px; padding-top:0px; margin-bottom:5px;}
+.menu-items { font-size:10px;} 
+#main { float:right; margin-right: 10px;}
+a { white-space: nowrap;font-weight:normal; }
+body { background-color: #eee; margin:0px;}
+</style>
+</head>
+<body><script type="text/javascript">
+window.resizeTo(1200,window.outerHeight);
+</script>
+<div id="menu"><div class="menu-title">data set "qrio-1"</div>
+<script type="text/javascript">
+var _showImages=false;
+function showImages () {
+  _showImages = !_showImages;
+  var nodes=document.getElementsByName("images");
+  for(var i=0;i<nodes.length;i++) {
+    if (_showImages) {
+      nodes[i].style.display="table-row";
+    } else {
+      nodes[i].style.display="none";
+    }
+  }
+  if (_showImages) {
+    document.getElementById('show-images-1').firstChild.replaceData(0,10000,'on');
+    document.getElementById('show-images-2').firstChild.replaceData(0,10000,'off');
+  } else {
+    document.getElementById('show-images-1').firstChild.replaceData(0,10000,'off');
+    document.getElementById('show-images-2').firstChild.replaceData(0,10000,'on');
+  }
+}
+
+var _showWMs=false;
+function showWMs() {
+  _showWMs = !_showWMs;
+  var nodes=document.getElementsByName("wms");
+  for(var i=0;i<nodes.length;i++) {
+    if (_showWMs) {
+      nodes[i].style.display="table-row";
+    } else {
+      nodes[i].style.display="none";
+    }
+  }
+  if (_showWMs) {
+    document.getElementById('show-wm-1').firstChild.replaceData(0,10000,'on');
+    document.getElementById('show-wm-2').firstChild.replaceData(0,10000,'off');
+  } else {
+    document.getElementById('show-wm-1').firstChild.replaceData(0,10000,'off');
+    document.getElementById('show-wm-2').firstChild.replaceData(0,10000,'on');
+  }
+}
+
+var _showObjIDs=0;
+function showObjectIDs() {
+  _showObjIDs++;
+  if (_showObjIDs > 3) { _showObjIDs = 0 };
+  var nodes=document.getElementsByName("obj-ids-a");
+  for(var i=0;i<nodes.length;i++) {
+    if ((_showObjIDs == 1) || (_showObjIDs == 3)) {
+      nodes[i].style.display="inline";
+    } else {
+      nodes[i].style.display="none";
+    }
+  }
+  nodes=document.getElementsByName("obj-ids-b");
+  for(i=0;i<nodes.length;i++) {
+    if ((_showObjIDs == 1) || (_showObjIDs == 2)) {
+      nodes[i].style.display="inline";
+    } else {
+      nodes[i].style.display="none";
+    }
+  }
+  nodes=document.getElementsByName("pointing-a");
+  for(i=0;i<nodes.length;i++) {
+    if (_showObjIDs == 2) {
+      nodes[i].style.display="inline";
+    } else {
+      nodes[i].style.display="none";
+    }
+  }
+  nodes=document.getElementsByName("pointing-b");
+  for(i=0;i<nodes.length;i++) {
+    if (_showObjIDs == 3) {
+      nodes[i].style.display="inline";
+    } else {
+      nodes[i].style.display="none";
+    }
+  }
+  switch (_showObjIDs) {
+  case 0: 
+    document.getElementById('show-object-ids-1').firstChild.replaceData(0,10000,'off'); 
+    document.getElementById('show-object-ids-2').firstChild.replaceData(0,10000,'on'); 
+    break;
+  case 1: 
+    document.getElementById('show-object-ids-1').firstChild.replaceData(0,10000,'on'); 
+    document.getElementById('show-object-ids-2').firstChild.replaceData(0,10000,'a'); 
+    break;
+  case 2:
+    document.getElementById('show-object-ids-1').firstChild.replaceData(0,10000,'a'); 
+    document.getElementById('show-object-ids-2').firstChild.replaceData(0,10000,'b'); 
+    break;
+  case 3: 
+    document.getElementById('show-object-ids-1').firstChild.replaceData(0,10000,'b'); 
+    document.getElementById('show-object-ids-2').firstChild.replaceData(0,10000,'off'); 
+    break;
+  }
+}</script>
+<div>images: <span id="show-images-1">off</span>
+<a id="show-images-2" href="javascript:showImages()">on</a>
+<br/>world models: <span id="show-wm-1">off</span>
+<a id="show-wm-2" href="javascript:showWMs()">on</a>
+<br/>object ids: <span id="show-object-ids-1">off</span>
+<a id="show-object-ids-2" href="javascript:showObjectIDs()">on</a>
+<br/><br/></div>
+<div class="menu-items"><a href="#scene-3378507956">07956 </a>
+<a href="#scene-3378508122">08122 </a>
+<a href="#scene-3378508936">08936 </a>
+<a href="#scene-3378509064">09064 </a>
+<a href="#scene-3378510556">10556 </a>
+<a href="#scene-3378518034">18034 </a>
+<a href="#scene-3378525582">25582 </a>
+<a href="#scene-3378526272">26272 </a>
+<a href="#scene-3378526393">26393 </a>
+</div>
+</div>
+<div id="main"><div id="scene-3378507956"><div><table class="physical-robot-scene"><tr><td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378507956/wm-a.png"/><div class="scene-title">scene-3378507956</div>
+<div class="robot-label">robot A</div>
+<div name="obj-ids-a" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:204px;top:306px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:286px;top:219px;color:#000;;"><tt>obj-30023</tt>
+</div>
+<div class="object-label" style="left:244px;top:198px;color:#000;;"><tt>obj-30025</tt>
+</div>
+<div class="object-label" style="left:247px;top:250px;color:#000;;"><tt>obj-30027</tt>
+</div>
+<div class="object-label" style="left:220px;top:231px;color:#000;;"><tt>obj-30029</tt>
+</div>
+</div>
+<div name="pointing-a" style="display:none"><div class="cross-1" style="left:204px;top:306px;"></div>
+<div class="cross-2" style="left:204px;top:306px;"></div>
+<div class="object-label" style="left:204px;top:306px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:251px;top:313px;"></div>
+<div class="cross-2" style="left:251px;top:313px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:251px;top:257px;"></div>
+<div class="cross-2" style="left:251px;top:257px;"></div>
+<div class="object-label" style="left:247px;top:250px;color:#800;"><tt>obj-30062</tt>
+</div>
+<div class="cross-1" style="left:302px;top:205px;"></div>
+<div class="cross-2" style="left:302px;top:205px;"></div>
+<div class="object-label" style="left:286px;top:219px;color:#800;"><tt>obj-30072</tt>
+</div>
+<div class="cross-1" style="left:218px;top:238px;"></div>
+<div class="cross-2" style="left:218px;top:238px;"></div>
+<div class="object-label" style="left:220px;top:231px;color:#800;"><tt>obj-30074</tt>
+</div>
+<div class="cross-1" style="left:185px;top:201px;"></div>
+<div class="cross-2" style="left:185px;top:201px;"></div>
+<div class="object-label" style="left:220px;top:231px;color:#800;"><tt>obj-30075</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+<td class="separator"></td>
+<td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378507956/wm-b.png"/><div class="robot-label">robot B</div>
+<div name="obj-ids-b" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:296px;top:305px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:276px;top:253px;color:#000;;"><tt>obj-30062</tt>
+</div>
+<div class="object-label" style="left:304px;top:186px;color:#000;;"><tt>obj-30072</tt>
+</div>
+<div class="object-label" style="left:238px;top:248px;color:#000;;"><tt>obj-30074</tt>
+</div>
+<div class="object-label" style="left:194px;top:226px;color:#000;;"><tt>obj-30075</tt>
+</div>
+</div>
+<div name="pointing-b" style="display:none"><div class="cross-1" style="left:296px;top:305px;"></div>
+<div class="cross-2" style="left:296px;top:305px;"></div>
+<div class="object-label" style="left:296px;top:305px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:250px;top:313px;"></div>
+<div class="cross-2" style="left:250px;top:313px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:294px;top:202px;"></div>
+<div class="cross-2" style="left:294px;top:202px;"></div>
+<div class="object-label" style="left:304px;top:186px;color:#800;"><tt>obj-30023</tt>
+</div>
+<div class="cross-1" style="left:247px;top:198px;"></div>
+<div class="cross-2" style="left:247px;top:198px;"></div>
+<div class="object-label" style="left:238px;top:248px;color:#800;"><tt>obj-30025</tt>
+</div>
+<div class="cross-1" style="left:269px;top:245px;"></div>
+<div class="cross-2" style="left:269px;top:245px;"></div>
+<div class="object-label" style="left:276px;top:253px;color:#800;"><tt>obj-30027</tt>
+</div>
+<div class="cross-1" style="left:237px;top:238px;"></div>
+<div class="cross-2" style="left:237px;top:238px;"></div>
+<div class="object-label" style="left:238px;top:248px;color:#800;"><tt>obj-30029</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+</tr>
+<tr><td colspan="3" class="separator"></td>
+</tr>
+<tr name="images" style="display:none"><td class="image"><div><img src="scene-3378507956/image-a.png"/></div>
+</td>
+<td class="separator"></td>
+<td class="image"><div><img src="scene-3378507956/image-b.png"/></div>
+</td>
+</tr>
+<tr name="wms" style="display:none"><td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 75.0 :y 350.0 :orientation 0.44 :x_
+  0.15 :y_ 0.79)
+ (obj-30023 :x 738.0 :y -273.0 :z 0.0 :width 53.0 :height 181.48
+  :average-y 78.0 :stdev-y 18.02 :min-y 55.0 :max-y 175.0 :average-u
+  194.0 :stdev-u 12.06 :min-u 145.0 :max-u 231.0 :average-v 99.0
+  :stdev-v 9.18 :min-v 51.0 :max-v 125.0 :x_ 0.62 :y_ 0.3 :z_ 0.5
+  :width_ 0.38 :height_ 0.54 :average-y_ 0.37 :stdev-y_ 0.32 :min-y_
+  0.72 :max-y_ 0.58 :average-u_ 0.72 :stdev-u_ 0.48 :min-u_ 0.73
+  :max-u_ 0.74 :average-v_ 0.42 :stdev-v_ 0.48 :min-v_ 0.28 :max-v_
+  0.39)
+ (obj-30025 :x 895.0 :y 44.0 :z 0.0 :width 90.5 :height 95.65
+  :average-y 104.0 :stdev-y 37.42 :min-y 44.0 :max-y 159.0 :average-u
+  219.0 :stdev-u 18.18 :min-u 137.0 :max-u 252.0 :average-v 113.0
+  :stdev-v 6.82 :min-v 96.0 :max-v 130.0 :x_ 0.74 :y_ 0.55 :z_ 0.5
+  :width_ 0.62 :height_ 0.3 :average-y_ 0.55 :stdev-y_ 0.68 :min-y_
+  0.52 :max-y_ 0.48 :average-u_ 0.86 :stdev-u_ 0.72 :min-u_ 0.68
+  :max-u_ 0.85 :average-v_ 0.53 :stdev-v_ 0.39 :min-v_ 0.59 :max-v_
+  0.44)
+ (obj-30027 :x 498.0 :y 23.0 :z 0.0 :width 49.5 :height 122.16
+  :average-y 124.0 :stdev-y 56.87 :min-y 52.0 :max-y 220.0 :average-u
+  195.0 :stdev-u 11.65 :min-u 135.0 :max-u 226.0 :average-v 121.0
+  :stdev-v 5.45 :min-v 103.0 :max-v 132.0 :x_ 0.45 :y_ 0.53 :z_ 0.5
+  :width_ 0.36 :height_ 0.37 :average-y_ 0.69 :stdev-y_ 1.0 :min-y_
+  0.66 :max-y_ 0.84 :average-u_ 0.73 :stdev-u_ 0.46 :min-u_ 0.66
+  :max-u_ 0.72 :average-v_ 0.59 :stdev-v_ 0.33 :min-v_ 0.64 :max-v_
+  0.46)
+ (obj-30029 :x 644.0 :y 230.0 :z 0.0 :width 47.0 :height 155.65
+  :average-y 71.0 :stdev-y 11.29 :min-y 54.0 :max-y 138.0 :average-u
+  195.0 :stdev-u 11.44 :min-u 136.0 :max-u 223.0 :average-v 127.0
+  :stdev-v 2.0 :min-v 114.0 :max-v 135.0 :x_ 0.56 :y_ 0.69 :z_ 0.5
+  :width_ 0.34 :height_ 0.47 :average-y_ 0.32 :stdev-y_ 0.2 :min-y_
+  0.7 :max-y_ 0.36 :average-u_ 0.73 :stdev-u_ 0.45 :min-u_ 0.67
+  :max-u_ 0.7 :average-v_ 0.63 :stdev-v_ 0.2 :min-v_ 0.72 :max-v_
+  0.49))</pre>
+</td>
+<td class="separator"></td>
+<td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 80.0 :y -350.0 :orientation 0.56 :x_
+  0.15 :y_ 0.24)
+ (obj-30062 :x 476.0 :y -198.0 :z 0.0 :width 62.5 :height 160.58
+  :average-y 119.0 :stdev-y 47.57 :min-y 42.0 :max-y 214.0 :average-u
+  198.0 :stdev-u 15.24 :min-u 131.0 :max-u 230.0 :average-v 123.0
+  :stdev-v 4.47 :min-v 104.0 :max-v 134.0 :x_ 0.44 :y_ 0.36 :z_ 0.5
+  :width_ 0.44 :height_ 0.48 :average-y_ 0.66 :stdev-y_ 0.87 :min-y_
+  0.48 :max-y_ 0.8 :average-u_ 0.74 :stdev-u_ 0.6 :min-u_ 0.64
+  :max-u_ 0.74 :average-v_ 0.6 :stdev-v_ 0.3 :min-v_ 0.65 :max-v_
+  0.48)
+ (obj-30072 :x 987.0 :y -412.0 :z 0.0 :width 77.5 :height 217.85
+  :average-y 77.0 :stdev-y 16.74 :min-y 55.0 :max-y 153.0 :average-u
+  194.0 :stdev-u 11.95 :min-u 151.0 :max-u 230.0 :average-v 103.0
+  :stdev-v 9.09 :min-v 60.0 :max-v 126.0 :x_ 0.8 :y_ 0.19 :z_ 0.5
+  :width_ 0.54 :height_ 0.64 :average-y_ 0.36 :stdev-y_ 0.3 :min-y_
+  0.72 :max-y_ 0.45 :average-u_ 0.72 :stdev-u_ 0.47 :min-u_ 0.77
+  :max-u_ 0.74 :average-v_ 0.45 :stdev-v_ 0.48 :min-v_ 0.34 :max-v_
+  0.4)
+ (obj-30074 :x 518.0 :y 94.0 :z 0.0 :width 51.5 :height 316.06
+  :average-y 72.0 :stdev-y 18.87 :min-y 49.0 :max-y 150.0 :average-u
+  201.0 :stdev-u 9.67 :min-u 187.0 :max-u 246.0 :average-v 128.0
+  :stdev-v 4.92 :min-v 100.0 :max-v 138.0 :x_ 0.47 :y_ 0.59 :z_ 0.5
+  :width_ 0.37 :height_ 0.92 :average-y_ 0.32 :stdev-y_ 0.34 :min-y_
+  0.61 :max-y_ 0.43 :average-u_ 0.76 :stdev-u_ 0.39 :min-u_ 1.0
+  :max-u_ 0.82 :average-v_ 0.64 :stdev-v_ 0.31 :min-v_ 0.62 :max-v_
+  0.52)
+ (obj-30075 :x 685.0 :y 429.0 :z 0.0 :width 61.0 :height 107.82
+  :average-y 122.0 :stdev-y 38.87 :min-y 36.0 :max-y 193.0 :average-u
+  203.0 :stdev-u 18.45 :min-u 143.0 :max-u 229.0 :average-v 124.0
+  :stdev-v 2.46 :min-v 114.0 :max-v 135.0 :x_ 0.58 :y_ 0.85 :z_ 0.5
+  :width_ 0.43 :height_ 0.33 :average-y_ 0.68 :stdev-y_ 0.71 :min-y_
+  0.38 :max-y_ 0.68 :average-u_ 0.77 :stdev-u_ 0.73 :min-u_ 0.72
+  :max-u_ 0.73 :average-v_ 0.61 :stdev-v_ 0.22 :min-v_ 0.72 :max-v_
+  0.49))</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="scene-3378508122"><div><table class="physical-robot-scene"><tr><td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378508122/wm-a.png"/><div class="scene-title">scene-3378508122</div>
+<div class="robot-label">robot A</div>
+<div name="obj-ids-a" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:204px;top:306px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:286px;top:219px;color:#000;;"><tt>obj-30023</tt>
+</div>
+<div class="object-label" style="left:229px;top:241px;color:#000;;"><tt>obj-30029</tt>
+</div>
+<div class="object-label" style="left:270px;top:249px;color:#000;;"><tt>obj-30031</tt>
+</div>
+<div class="object-label" style="left:248px;top:198px;color:#000;;"><tt>obj-30032</tt>
+</div>
+</div>
+<div name="pointing-a" style="display:none"><div class="cross-1" style="left:204px;top:306px;"></div>
+<div class="cross-2" style="left:204px;top:306px;"></div>
+<div class="object-label" style="left:204px;top:306px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:251px;top:313px;"></div>
+<div class="cross-2" style="left:251px;top:313px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:302px;top:205px;"></div>
+<div class="cross-2" style="left:302px;top:205px;"></div>
+<div class="object-label" style="left:286px;top:219px;color:#800;"><tt>obj-30072</tt>
+</div>
+<div class="cross-1" style="left:225px;top:249px;"></div>
+<div class="cross-2" style="left:225px;top:249px;"></div>
+<div class="object-label" style="left:229px;top:241px;color:#800;"><tt>obj-30077</tt>
+</div>
+<div class="cross-1" style="left:283px;top:251px;"></div>
+<div class="cross-2" style="left:283px;top:251px;"></div>
+<div class="object-label" style="left:270px;top:249px;color:#800;"><tt>obj-30078</tt>
+</div>
+<div class="cross-1" style="left:196px;top:213px;"></div>
+<div class="cross-2" style="left:196px;top:213px;"></div>
+<div class="object-label" style="left:229px;top:241px;color:#800;"><tt>obj-30079</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+<td class="separator"></td>
+<td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378508122/wm-b.png"/><div class="robot-label">robot B</div>
+<div name="obj-ids-b" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:296px;top:305px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:304px;top:186px;color:#000;;"><tt>obj-30072</tt>
+</div>
+<div class="object-label" style="left:248px;top:255px;color:#000;;"><tt>obj-30077</tt>
+</div>
+<div class="object-label" style="left:304px;top:236px;color:#000;;"><tt>obj-30078</tt>
+</div>
+<div class="object-label" style="left:208px;top:233px;color:#000;;"><tt>obj-30079</tt>
+</div>
+</div>
+<div name="pointing-b" style="display:none"><div class="cross-1" style="left:296px;top:305px;"></div>
+<div class="cross-2" style="left:296px;top:305px;"></div>
+<div class="object-label" style="left:296px;top:305px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:250px;top:313px;"></div>
+<div class="cross-2" style="left:250px;top:313px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:294px;top:202px;"></div>
+<div class="cross-2" style="left:294px;top:202px;"></div>
+<div class="object-label" style="left:304px;top:186px;color:#800;"><tt>obj-30023</tt>
+</div>
+<div class="cross-1" style="left:249px;top:243px;"></div>
+<div class="cross-2" style="left:249px;top:243px;"></div>
+<div class="object-label" style="left:248px;top:255px;color:#800;"><tt>obj-30029</tt>
+</div>
+<div class="cross-1" style="left:290px;top:236px;"></div>
+<div class="cross-2" style="left:290px;top:236px;"></div>
+<div class="object-label" style="left:304px;top:236px;color:#800;"><tt>obj-30031</tt>
+</div>
+<div class="cross-1" style="left:251px;top:196px;"></div>
+<div class="cross-2" style="left:251px;top:196px;"></div>
+<div class="object-label" style="left:304px;top:186px;color:#800;"><tt>obj-30032</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+</tr>
+<tr><td colspan="3" class="separator"></td>
+</tr>
+<tr name="images" style="display:none"><td class="image"><div><img src="scene-3378508122/image-a.png"/></div>
+</td>
+<td class="separator"></td>
+<td class="image"><div><img src="scene-3378508122/image-b.png"/></div>
+</td>
+</tr>
+<tr name="wms" style="display:none"><td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 75.0 :y 350.0 :orientation 0.44 :x_
+  0.15 :y_ 0.79)
+ (obj-30023 :x 738.0 :y -273.0 :z 0.0 :width 53.0 :height 181.49
+  :average-y 78.0 :stdev-y 17.13 :min-y 54.0 :max-y 175.0 :average-u
+  194.0 :stdev-u 11.87 :min-u 144.0 :max-u 231.0 :average-v 99.0
+  :stdev-v 8.82 :min-v 51.0 :max-v 125.0 :x_ 0.62 :y_ 0.3 :z_ 0.5
+  :width_ 0.38 :height_ 0.54 :average-y_ 0.37 :stdev-y_ 0.3 :min-y_
+  0.7 :max-y_ 0.58 :average-u_ 0.72 :stdev-u_ 0.47 :min-u_ 0.72
+  :max-u_ 0.74 :average-v_ 0.42 :stdev-v_ 0.47 :min-v_ 0.28 :max-v_
+  0.39)
+ (obj-30029 :x 568.0 :y 159.0 :z 0.0 :width 46.0 :height 257.2
+  :average-y 69.0 :stdev-y 9.44 :min-y 48.0 :max-y 138.0 :average-u
+  191.0 :stdev-u 12.26 :min-u 125.0 :max-u 225.0 :average-v 128.0
+  :stdev-v 1.8 :min-v 114.0 :max-v 139.0 :x_ 0.5 :y_ 0.64 :z_ 0.5
+  :width_ 0.33 :height_ 0.75 :average-y_ 0.3 :stdev-y_ 0.16 :min-y_
+  0.59 :max-y_ 0.36 :average-u_ 0.71 :stdev-u_ 0.49 :min-u_ 0.6
+  :max-u_ 0.71 :average-v_ 0.64 :stdev-v_ 0.19 :min-v_ 0.72 :max-v_
+  0.53)
+ (obj-30031 :x 505.0 :y -149.0 :z 0.0 :width 50.5 :height 143.54
+  :average-y 82.0 :stdev-y 36.86 :min-y 38.0 :max-y 144.0 :average-u
+  99.0 :stdev-u 13.88 :min-u 69.0 :max-u 126.0 :average-v 95.0
+  :stdev-v 18.59 :min-v 58.0 :max-v 124.0 :x_ 0.46 :y_ 0.4 :z_ 0.5
+  :width_ 0.36 :height_ 0.43 :average-y_ 0.39 :stdev-y_ 0.67 :min-y_
+  0.41 :max-y_ 0.4 :average-u_ 0.21 :stdev-u_ 0.55 :min-u_ 0.23
+  :max-u_ 0.21 :average-v_ 0.39 :stdev-v_ 0.86 :min-v_ 0.33 :max-v_
+  0.38)
+ (obj-30032 :x 895.0 :y 15.0 :z 0.0 :width 71.0 :height 85.34
+  :average-y 171.0 :stdev-y 55.87 :min-y 71.0 :max-y 244.0 :average-u
+  141.0 :stdev-u 10.21 :min-u 124.0 :max-u 169.0 :average-v 52.0
+  :stdev-v 16.58 :min-v 28.0 :max-v 118.0 :x_ 0.74 :y_ 0.53 :z_ 0.5
+  :width_ 0.5 :height_ 0.27 :average-y_ 1.0 :stdev-y_ 1.0 :min-y_ 1.0
+  :max-y_ 0.98 :average-u_ 0.43 :stdev-u_ 0.41 :min-u_ 0.59 :max-u_
+  0.43 :average-v_ 0.07 :stdev-v_ 0.78 :min-v_ 0.12 :max-v_ 0.32))</pre>
+</td>
+<td class="separator"></td>
+<td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 80.0 :y -350.0 :orientation 0.56 :x_
+  0.15 :y_ 0.24)
+ (obj-30072 :x 987.0 :y -412.0 :z 0.0 :width 73.0 :height 217.65
+  :average-y 77.0 :stdev-y 16.81 :min-y 53.0 :max-y 154.0 :average-u
+  194.0 :stdev-u 11.9 :min-u 151.0 :max-u 230.0 :average-v 103.0
+  :stdev-v 9.08 :min-v 60.0 :max-v 126.0 :x_ 0.8 :y_ 0.19 :z_ 0.5
+  :width_ 0.51 :height_ 0.64 :average-y_ 0.36 :stdev-y_ 0.3 :min-y_
+  0.68 :max-y_ 0.46 :average-u_ 0.72 :stdev-u_ 0.47 :min-u_ 0.77
+  :max-u_ 0.74 :average-v_ 0.45 :stdev-v_ 0.48 :min-v_ 0.34 :max-v_
+  0.4)
+ (obj-30077 :x 463.0 :y 12.0 :z 0.0 :width 83.0 :height 333.82
+  :average-y 80.0 :stdev-y 44.05 :min-y 48.0 :max-y 243.0 :average-u
+  191.0 :stdev-u 17.97 :min-u 127.0 :max-u 227.0 :average-v 119.0
+  :stdev-v 28.02 :min-v 26.0 :max-v 140.0 :x_ 0.43 :y_ 0.52 :z_ 0.5
+  :width_ 0.58 :height_ 0.97 :average-y_ 0.38 :stdev-y_ 0.8 :min-y_
+  0.59 :max-y_ 0.97 :average-u_ 0.71 :stdev-u_ 0.71 :min-u_ 0.61
+  :max-u_ 0.72 :average-v_ 0.57 :stdev-v_ 1.0 :min-v_ 0.1 :max-v_
+  0.54)
+ (obj-30078 :x 610.0 :y -407.0 :z 0.0 :width 48.5 :height 119.21
+  :average-y 74.0 :stdev-y 32.92 :min-y 35.0 :max-y 128.0 :average-u
+  103.0 :stdev-u 10.9 :min-u 77.0 :max-u 126.0 :average-v 101.0
+  :stdev-v 14.23 :min-v 71.0 :max-v 125.0 :x_ 0.53 :y_ 0.19 :z_ 0.5
+  :width_ 0.35 :height_ 0.36 :average-y_ 0.34 :stdev-y_ 0.6 :min-y_
+  0.36 :max-y_ 0.3 :average-u_ 0.23 :stdev-u_ 0.43 :min-u_ 0.28
+  :max-u_ 0.21 :average-v_ 0.44 :stdev-v_ 0.69 :min-v_ 0.42 :max-v_
+  0.39)
+ (obj-30079 :x 630.0 :y 318.0 :z 0.0 :width 67.5 :height 178.6
+  :average-y 85.0 :stdev-y 29.07 :min-y 30.0 :max-y 117.0 :average-u
+  99.0 :stdev-u 13.89 :min-u 76.0 :max-u 129.0 :average-v 183.0
+  :stdev-v 18.84 :min-v 134.0 :max-v 208.0 :x_ 0.55 :y_ 0.76 :z_ 0.5
+  :width_ 0.47 :height_ 0.53 :average-y_ 0.42 :stdev-y_ 0.52 :min-y_
+  0.27 :max-y_ 0.24 :average-u_ 0.21 :stdev-u_ 0.55 :min-u_ 0.28
+  :max-u_ 0.22 :average-v_ 1.0 :stdev-v_ 0.87 :min-v_ 0.86 :max-v_
+  1.0))</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="scene-3378508936"><div><table class="physical-robot-scene"><tr><td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378508936/wm-a.png"/><div class="scene-title">scene-3378508936</div>
+<div class="robot-label">robot A</div>
+<div name="obj-ids-a" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:204px;top:306px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:288px;top:228px;color:#000;;"><tt>obj-30033</tt>
+</div>
+<div class="object-label" style="left:221px;top:196px;color:#000;;"><tt>obj-30035</tt>
+</div>
+<div class="object-label" style="left:218px;top:234px;color:#000;;"><tt>obj-30036</tt>
+</div>
+<div class="object-label" style="left:262px;top:215px;color:#000;;"><tt>obj-30038</tt>
+</div>
+<div class="object-label" style="left:248px;top:244px;color:#000;;"><tt>obj-30040</tt>
+</div>
+<div class="object-label" style="left:259px;top:215px;color:#000;;"><tt>obj-30042</tt>
+</div>
+</div>
+<div name="pointing-a" style="display:none"><div class="cross-1" style="left:204px;top:306px;"></div>
+<div class="cross-2" style="left:204px;top:306px;"></div>
+<div class="object-label" style="left:204px;top:306px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:251px;top:313px;"></div>
+<div class="cross-2" style="left:251px;top:313px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:268px;top:171px;"></div>
+<div class="cross-2" style="left:268px;top:171px;"></div>
+<div class="object-label" style="left:262px;top:215px;color:#800;"><tt>obj-30072</tt>
+</div>
+<div class="cross-1" style="left:209px;top:182px;"></div>
+<div class="cross-2" style="left:209px;top:182px;"></div>
+<div class="object-label" style="left:221px;top:196px;color:#800;"><tt>obj-30081</tt>
+</div>
+<div class="cross-1" style="left:209px;top:242px;"></div>
+<div class="cross-2" style="left:209px;top:242px;"></div>
+<div class="object-label" style="left:218px;top:234px;color:#800;"><tt>obj-30084</tt>
+</div>
+<div class="cross-1" style="left:306px;top:215px;"></div>
+<div class="cross-2" style="left:306px;top:215px;"></div>
+<div class="object-label" style="left:288px;top:228px;color:#800;"><tt>obj-30085</tt>
+</div>
+<div class="cross-1" style="left:256px;top:251px;"></div>
+<div class="cross-2" style="left:256px;top:251px;"></div>
+<div class="object-label" style="left:248px;top:244px;color:#800;"><tt>obj-30089</tt>
+</div>
+<div class="cross-1" style="left:268px;top:206px;"></div>
+<div class="cross-2" style="left:268px;top:206px;"></div>
+<div class="object-label" style="left:262px;top:215px;color:#800;"><tt>obj-30090</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+<td class="separator"></td>
+<td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378508936/wm-b.png"/><div class="robot-label">robot B</div>
+<div name="obj-ids-b" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:296px;top:305px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:259px;top:166px;color:#000;;"><tt>obj-30072</tt>
+</div>
+<div class="object-label" style="left:209px;top:199px;color:#000;;"><tt>obj-30081</tt>
+</div>
+<div class="object-label" style="left:231px;top:255px;color:#000;;"><tt>obj-30084</tt>
+</div>
+<div class="object-label" style="left:311px;top:194px;color:#000;;"><tt>obj-30085</tt>
+</div>
+<div class="object-label" style="left:278px;top:246px;color:#000;;"><tt>obj-30089</tt>
+</div>
+<div class="object-label" style="left:273px;top:199px;color:#000;;"><tt>obj-30090</tt>
+</div>
+</div>
+<div name="pointing-b" style="display:none"><div class="cross-1" style="left:296px;top:305px;"></div>
+<div class="cross-2" style="left:296px;top:305px;"></div>
+<div class="object-label" style="left:296px;top:305px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:250px;top:313px;"></div>
+<div class="cross-2" style="left:250px;top:313px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:299px;top:210px;"></div>
+<div class="cross-2" style="left:299px;top:210px;"></div>
+<div class="object-label" style="left:311px;top:194px;color:#800;"><tt>obj-30033</tt>
+</div>
+<div class="cross-1" style="left:225px;top:204px;"></div>
+<div class="cross-2" style="left:225px;top:204px;"></div>
+<div class="object-label" style="left:209px;top:199px;color:#800;"><tt>obj-30035</tt>
+</div>
+<div class="cross-1" style="left:236px;top:241px;"></div>
+<div class="cross-2" style="left:236px;top:241px;"></div>
+<div class="object-label" style="left:231px;top:255px;color:#800;"><tt>obj-30036</tt>
+</div>
+<div class="cross-1" style="left:271px;top:207px;"></div>
+<div class="cross-2" style="left:271px;top:207px;"></div>
+<div class="object-label" style="left:273px;top:199px;color:#800;"><tt>obj-30038</tt>
+</div>
+<div class="cross-1" style="left:268px;top:240px;"></div>
+<div class="cross-2" style="left:268px;top:240px;"></div>
+<div class="object-label" style="left:278px;top:246px;color:#800;"><tt>obj-30040</tt>
+</div>
+<div class="cross-1" style="left:268px;top:208px;"></div>
+<div class="cross-2" style="left:268px;top:208px;"></div>
+<div class="object-label" style="left:273px;top:199px;color:#800;"><tt>obj-30042</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+</tr>
+<tr><td colspan="3" class="separator"></td>
+</tr>
+<tr name="images" style="display:none"><td class="image"><div><img src="scene-3378508936/image-a.png"/></div>
+</td>
+<td class="separator"></td>
+<td class="image"><div><img src="scene-3378508936/image-b.png"/></div>
+</td>
+</tr>
+<tr name="wms" style="display:none"><td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 75.0 :y 350.0 :orientation 0.44 :x_
+  0.15 :y_ 0.79)
+ (obj-30033 :x 666.0 :y -289.0 :z 0.0 :width 82.0 :height 115.82
+  :average-y 54.0 :stdev-y 24.43 :min-y 27.0 :max-y 119.0 :average-u
+  110.0 :stdev-u 10.88 :min-u 71.0 :max-u 128.0 :average-v 165.0
+  :stdev-v 14.03 :min-v 132.0 :max-v 213.0 :x_ 0.57 :y_ 0.29 :z_ 0.5
+  :width_ 0.57 :height_ 0.35 :average-y_ 0.19 :stdev-y_ 0.44 :min-y_
+  0.22 :max-y_ 0.25 :average-u_ 0.27 :stdev-u_ 0.43 :min-u_ 0.25
+  :max-u_ 0.22 :average-v_ 0.92 :stdev-v_ 0.68 :min-v_ 0.85 :max-v_
+  1.0)
+ (obj-30035 :x 913.0 :y 223.0 :z 0.0 :width 73.5 :height 65.12
+  :average-y 110.0 :stdev-y 57.14 :min-y 46.0 :max-y 218.0 :average-u
+  169.0 :stdev-u 49.26 :min-u 54.0 :max-u 226.0 :average-v 123.0
+  :stdev-v 7.75 :min-v 99.0 :max-v 148.0 :x_ 0.75 :y_ 0.69 :z_ 0.5
+  :width_ 0.51 :height_ 0.21 :average-y_ 0.59 :stdev-y_ 1.0 :min-y_
+  0.56 :max-y_ 0.83 :average-u_ 0.59 :stdev-u_ 1.0 :min-u_ 0.13
+  :max-u_ 0.72 :average-v_ 0.6 :stdev-v_ 0.43 :min-v_ 0.62 :max-v_
+  0.61)
+ (obj-30036 :x 623.0 :y 242.0 :z 0.0 :width 98.5 :height 114.7
+  :average-y 187.0 :stdev-y 53.74 :min-y 51.0 :max-y 243.0 :average-u
+  142.0 :stdev-u 12.44 :min-u 50.0 :max-u 183.0 :average-v 47.0
+  :stdev-v 19.28 :min-v 22.0 :max-v 144.0 :x_ 0.54 :y_ 0.7 :z_ 0.5
+  :width_ 0.68 :height_ 0.35 :average-y_ 1.0 :stdev-y_ 0.98 :min-y_
+  0.64 :max-y_ 0.97 :average-u_ 0.44 :stdev-u_ 0.49 :min-u_ 0.11
+  :max-u_ 0.5 :average-v_ 0.03 :stdev-v_ 0.89 :min-v_ 0.08 :max-v_
+  0.57)
+ (obj-30038 :x 766.0 :y -95.0 :z 0.0 :width 62.5 :height 140.01
+  :average-y 70.0 :stdev-y 24.56 :min-y 44.0 :max-y 199.0 :average-u
+  194.0 :stdev-u 15.07 :min-u 71.0 :max-u 232.0 :average-v 123.0
+  :stdev-v 16.8 :min-v 46.0 :max-v 140.0 :x_ 0.64 :y_ 0.44 :z_ 0.5
+  :width_ 0.44 :height_ 0.42 :average-y_ 0.31 :stdev-y_ 0.44 :min-y_
+  0.52 :max-y_ 0.72 :average-u_ 0.72 :stdev-u_ 0.6 :min-u_ 0.25
+  :max-u_ 0.75 :average-v_ 0.6 :stdev-v_ 0.79 :min-v_ 0.24 :max-v_
+  0.54)
+ (obj-30040 :x 543.0 :y 18.0 :z 0.0 :width 40.5 :height 96.56
+  :average-y 130.0 :stdev-y 42.56 :min-y 38.0 :max-y 208.0 :average-u
+  206.0 :stdev-u 16.93 :min-u 148.0 :max-u 232.0 :average-v 119.0
+  :stdev-v 5.97 :min-v 95.0 :max-v 130.0 :x_ 0.48 :y_ 0.53 :z_ 0.5
+  :width_ 0.3 :height_ 0.3 :average-y_ 0.74 :stdev-y_ 0.77 :min-y_
+  0.41 :max-y_ 0.77 :average-u_ 0.79 :stdev-u_ 0.67 :min-u_ 0.75
+  :max-u_ 0.75 :average-v_ 0.57 :stdev-v_ 0.36 :min-v_ 0.59 :max-v_
+  0.44)
+ (obj-30042 :x 766.0 :y -70.0 :z 0.0 :width 29.5 :height 58.57
+  :average-y 95.0 :stdev-y 24.44 :min-y 46.0 :max-y 139.0 :average-u
+  97.0 :stdev-u 9.15 :min-u 77.0 :max-u 116.0 :average-v 91.0
+  :stdev-v 10.63 :min-v 70.0 :max-v 113.0 :x_ 0.64 :y_ 0.46 :z_ 0.5
+  :width_ 0.23 :height_ 0.19 :average-y_ 0.49 :stdev-y_ 0.44 :min-y_
+  0.56 :max-y_ 0.37 :average-u_ 0.19 :stdev-u_ 0.36 :min-u_ 0.28
+  :max-u_ 0.16 :average-v_ 0.36 :stdev-v_ 0.54 :min-v_ 0.41 :max-v_
+  0.27))</pre>
+</td>
+<td class="separator"></td>
+<td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 80.0 :y -350.0 :orientation 0.56 :x_
+  0.15 :y_ 0.24)
+ (obj-30072 :x 1135.0 :y -71.0 :z 0.0 :width 76.5 :height 123.11
+  :average-y 82.0 :stdev-y 27.09 :min-y 50.0 :max-y 190.0 :average-u
+  195.0 :stdev-u 12.91 :min-u 143.0 :max-u 239.0 :average-v 101.0
+  :stdev-v 12.79 :min-v 43.0 :max-v 127.0 :x_ 0.91 :y_ 0.46 :z_ 0.5
+  :width_ 0.53 :height_ 0.37 :average-y_ 0.39 :stdev-y_ 0.49 :min-y_
+  0.63 :max-y_ 0.66 :average-u_ 0.73 :stdev-u_ 0.51 :min-u_ 0.72
+  :max-u_ 0.78 :average-v_ 0.44 :stdev-v_ 0.63 :min-v_ 0.22 :max-v_
+  0.41)
+ (obj-30081 :x 888.0 :y 309.0 :z 0.0 :width 109.0 :height 141.25
+  :average-y 107.0 :stdev-y 39.32 :min-y 37.0 :max-y 159.0 :average-u
+  77.0 :stdev-u 19.6 :min-u 48.0 :max-u 127.0 :average-v 137.0
+  :stdev-v 4.32 :min-v 126.0 :max-v 153.0 :x_ 0.73 :y_ 0.76 :z_ 0.5
+  :width_ 0.75 :height_ 0.43 :average-y_ 0.57 :stdev-y_ 0.71 :min-y_
+  0.4 :max-y_ 0.48 :average-u_ 0.09 :stdev-u_ 0.77 :min-u_ 0.1
+  :max-u_ 0.21 :average-v_ 0.71 :stdev-v_ 0.29 :min-v_ 0.8 :max-v_
+  0.66)
+ (obj-30084 :x 464.0 :y 145.0 :z 0.0 :width 105.5 :height 213.14
+  :average-y 208.0 :stdev-y 41.05 :min-y 43.0 :max-y 246.0 :average-u
+  144.0 :stdev-u 7.94 :min-u 129.0 :max-u 186.0 :average-v 43.0
+  :stdev-v 13.76 :min-v 25.0 :max-v 127.0 :x_ 0.43 :y_ 0.63 :z_ 0.5
+  :width_ 0.72 :height_ 0.63 :average-y_ 1.0 :stdev-y_ 0.75 :min-y_
+  0.5 :max-y_ 0.99 :average-u_ 0.45 :stdev-u_ 0.32 :min-u_ 0.62
+  :max-u_ 0.51 :average-v_ 0.0 :stdev-v_ 0.67 :min-v_ 0.1 :max-v_
+  0.41)
+ (obj-30085 :x 925.0 :y -466.0 :z 0.0 :width 118.0 :height 112.38
+  :average-y 56.0 :stdev-y 21.97 :min-y 28.0 :max-y 104.0 :average-u
+  111.0 :stdev-u 8.72 :min-u 80.0 :max-u 126.0 :average-v 165.0
+  :stdev-v 12.02 :min-v 140.0 :max-v 198.0 :x_ 0.76 :y_ 0.15 :z_ 0.5
+  :width_ 0.8 :height_ 0.34 :average-y_ 0.21 :stdev-y_ 0.39 :min-y_
+  0.24 :max-y_ 0.17 :average-u_ 0.27 :stdev-u_ 0.35 :min-u_ 0.3
+  :max-u_ 0.21 :average-v_ 0.92 :stdev-v_ 0.6 :min-v_ 0.9 :max-v_
+  1.0)
+ (obj-30089 :x 533.0 :y -213.0 :z 0.0 :width 56.0 :height 117.33
+  :average-y 129.0 :stdev-y 39.9 :min-y 37.0 :max-y 199.0 :average-u
+  207.0 :stdev-u 17.13 :min-u 149.0 :max-u 233.0 :average-v 121.0
+  :stdev-v 4.24 :min-v 106.0 :max-v 131.0 :x_ 0.48 :y_ 0.35 :z_ 0.5
+  :width_ 0.4 :height_ 0.36 :average-y_ 0.73 :stdev-y_ 0.72 :min-y_
+  0.4 :max-y_ 0.72 :average-u_ 0.79 :stdev-u_ 0.68 :min-u_ 0.75
+  :max-u_ 0.75 :average-v_ 0.59 :stdev-v_ 0.29 :min-v_ 0.66 :max-v_
+  0.45)
+ (obj-30090 :x 888.0 :y -174.0 :z 0.0 :width 47.5 :height 83.85
+  :average-y 94.0 :stdev-y 20.98 :min-y 44.0 :max-y 128.0 :average-u
+  98.0 :stdev-u 7.9 :min-u 78.0 :max-u 124.0 :average-v 91.0 :stdev-v
+  9.86 :min-v 71.0 :max-v 119.0 :x_ 0.73 :y_ 0.38 :z_ 0.5 :width_
+  0.34 :height_ 0.26 :average-y_ 0.48 :stdev-y_ 0.37 :min-y_ 0.52
+  :max-y_ 0.3 :average-u_ 0.2 :stdev-u_ 0.32 :min-u_ 0.29 :max-u_ 0.2
+  :average-v_ 0.36 :stdev-v_ 0.51 :min-v_ 0.42 :max-v_ 0.33))</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="scene-3378509064"><div><table class="physical-robot-scene"><tr><td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378509064/wm-a.png"/><div class="scene-title">scene-3378509064</div>
+<div class="robot-label">robot A</div>
+<div name="obj-ids-a" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:204px;top:306px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:219px;top:235px;color:#000;;"><tt>obj-30036</tt>
+</div>
+<div class="object-label" style="left:248px;top:244px;color:#000;;"><tt>obj-30040</tt>
+</div>
+<div class="object-label" style="left:282px;top:228px;color:#000;;"><tt>obj-30043</tt>
+</div>
+<div class="object-label" style="left:264px;top:193px;color:#000;;"><tt>obj-30044</tt>
+</div>
+<div class="object-label" style="left:260px;top:211px;color:#000;;"><tt>obj-30047</tt>
+</div>
+<div class="object-label" style="left:225px;top:193px;color:#000;;"><tt>obj-30049</tt>
+</div>
+</div>
+<div name="pointing-a" style="display:none"><div class="cross-1" style="left:204px;top:306px;"></div>
+<div class="cross-2" style="left:204px;top:306px;"></div>
+<div class="object-label" style="left:204px;top:306px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:251px;top:313px;"></div>
+<div class="cross-2" style="left:251px;top:313px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:209px;top:241px;"></div>
+<div class="cross-2" style="left:209px;top:241px;"></div>
+<div class="object-label" style="left:219px;top:235px;color:#800;"><tt>obj-30084</tt>
+</div>
+<div class="cross-1" style="left:256px;top:251px;"></div>
+<div class="cross-2" style="left:256px;top:251px;"></div>
+<div class="object-label" style="left:248px;top:244px;color:#800;"><tt>obj-30089</tt>
+</div>
+<div class="cross-1" style="left:269px;top:205px;"></div>
+<div class="cross-2" style="left:269px;top:205px;"></div>
+<div class="object-label" style="left:264px;top:193px;color:#800;"><tt>obj-30090</tt>
+</div>
+<div class="cross-1" style="left:297px;top:219px;"></div>
+<div class="cross-2" style="left:297px;top:219px;"></div>
+<div class="object-label" style="left:282px;top:228px;color:#800;"><tt>obj-30091</tt>
+</div>
+<div class="cross-1" style="left:267px;top:161px;"></div>
+<div class="cross-2" style="left:267px;top:161px;"></div>
+<div class="object-label" style="left:264px;top:193px;color:#800;"><tt>obj-30092</tt>
+</div>
+<div class="cross-1" style="left:213px;top:175px;"></div>
+<div class="cross-2" style="left:213px;top:175px;"></div>
+<div class="object-label" style="left:225px;top:193px;color:#800;"><tt>obj-30093</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+<td class="separator"></td>
+<td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378509064/wm-b.png"/><div class="robot-label">robot B</div>
+<div name="obj-ids-b" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:296px;top:305px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:231px;top:254px;color:#000;;"><tt>obj-30084</tt>
+</div>
+<div class="object-label" style="left:278px;top:245px;color:#000;;"><tt>obj-30089</tt>
+</div>
+<div class="object-label" style="left:273px;top:198px;color:#000;;"><tt>obj-30090</tt>
+</div>
+<div class="object-label" style="left:304px;top:201px;color:#000;;"><tt>obj-30091</tt>
+</div>
+<div class="object-label" style="left:255px;top:158px;color:#000;;"><tt>obj-30092</tt>
+</div>
+<div class="object-label" style="left:210px;top:191px;color:#000;;"><tt>obj-30093</tt>
+</div>
+</div>
+<div name="pointing-b" style="display:none"><div class="cross-1" style="left:296px;top:305px;"></div>
+<div class="cross-2" style="left:296px;top:305px;"></div>
+<div class="object-label" style="left:296px;top:305px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:250px;top:313px;"></div>
+<div class="cross-2" style="left:250px;top:313px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:237px;top:242px;"></div>
+<div class="cross-2" style="left:237px;top:242px;"></div>
+<div class="object-label" style="left:231px;top:254px;color:#800;"><tt>obj-30036</tt>
+</div>
+<div class="cross-1" style="left:268px;top:240px;"></div>
+<div class="cross-2" style="left:268px;top:240px;"></div>
+<div class="object-label" style="left:278px;top:245px;color:#800;"><tt>obj-30040</tt>
+</div>
+<div class="cross-1" style="left:294px;top:212px;"></div>
+<div class="cross-2" style="left:294px;top:212px;"></div>
+<div class="object-label" style="left:304px;top:201px;color:#800;"><tt>obj-30043</tt>
+</div>
+<div class="cross-1" style="left:263px;top:186px;"></div>
+<div class="cross-2" style="left:263px;top:186px;"></div>
+<div class="object-label" style="left:273px;top:198px;color:#800;"><tt>obj-30044</tt>
+</div>
+<div class="cross-1" style="left:267px;top:204px;"></div>
+<div class="cross-2" style="left:267px;top:204px;"></div>
+<div class="object-label" style="left:273px;top:198px;color:#800;"><tt>obj-30047</tt>
+</div>
+<div class="cross-1" style="left:227px;top:200px;"></div>
+<div class="cross-2" style="left:227px;top:200px;"></div>
+<div class="object-label" style="left:210px;top:191px;color:#800;"><tt>obj-30049</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+</tr>
+<tr><td colspan="3" class="separator"></td>
+</tr>
+<tr name="images" style="display:none"><td class="image"><div><img src="scene-3378509064/image-a.png"/></div>
+</td>
+<td class="separator"></td>
+<td class="image"><div><img src="scene-3378509064/image-b.png"/></div>
+</td>
+</tr>
+<tr name="wms" style="display:none"><td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 75.0 :y 350.0 :orientation 0.44 :x_
+  0.15 :y_ 0.79)
+ (obj-30036 :x 613.0 :y 236.0 :z 0.0 :width 97.5 :height 121.97
+  :average-y 188.0 :stdev-y 52.95 :min-y 51.0 :max-y 243.0 :average-u
+  142.0 :stdev-u 11.86 :min-u 50.0 :max-u 183.0 :average-v 47.0
+  :stdev-v 18.3 :min-v 22.0 :max-v 144.0 :x_ 0.53 :y_ 0.7 :z_ 0.5
+  :width_ 0.67 :height_ 0.37 :average-y_ 1.0 :stdev-y_ 0.97 :min-y_
+  0.64 :max-y_ 0.97 :average-u_ 0.44 :stdev-u_ 0.47 :min-u_ 0.11
+  :max-u_ 0.5 :average-v_ 0.03 :stdev-v_ 0.85 :min-v_ 0.08 :max-v_
+  0.57)
+ (obj-30040 :x 543.0 :y 16.0 :z 0.0 :width 40.5 :height 96.59
+  :average-y 130.0 :stdev-y 42.47 :min-y 36.0 :max-y 208.0 :average-u
+  206.0 :stdev-u 16.81 :min-u 148.0 :max-u 233.0 :average-v 119.0
+  :stdev-v 5.97 :min-v 93.0 :max-v 131.0 :x_ 0.48 :y_ 0.53 :z_ 0.5
+  :width_ 0.3 :height_ 0.3 :average-y_ 0.74 :stdev-y_ 0.77 :min-y_
+  0.38 :max-y_ 0.77 :average-u_ 0.79 :stdev-u_ 0.66 :min-u_ 0.75
+  :max-u_ 0.75 :average-v_ 0.57 :stdev-v_ 0.36 :min-v_ 0.57 :max-v_
+  0.45)
+ (obj-30043 :x 665.0 :y -247.0 :z 0.0 :width 48.0 :height 117.53
+  :average-y 80.0 :stdev-y 34.78 :min-y 45.0 :max-y 146.0 :average-u
+  100.0 :stdev-u 11.7 :min-u 68.0 :max-u 123.0 :average-v 97.0
+  :stdev-v 17.01 :min-v 58.0 :max-v 123.0 :x_ 0.57 :y_ 0.32 :z_ 0.5
+  :width_ 0.35 :height_ 0.36 :average-y_ 0.38 :stdev-y_ 0.63 :min-y_
+  0.54 :max-y_ 0.41 :average-u_ 0.21 :stdev-u_ 0.46 :min-u_ 0.23
+  :max-u_ 0.19 :average-v_ 0.41 :stdev-v_ 0.8 :min-v_ 0.33 :max-v_
+  0.37)
+ (obj-30044 :x 933.0 :y -103.0 :z 0.0 :width 79.5 :height 167.89
+  :average-y 64.0 :stdev-y 13.75 :min-y 47.0 :max-y 134.0 :average-u
+  197.0 :stdev-u 12.09 :min-u 157.0 :max-u 241.0 :average-v 119.0
+  :stdev-v 2.7 :min-v 100.0 :max-v 128.0 :x_ 0.76 :y_ 0.43 :z_ 0.5
+  :width_ 0.55 :height_ 0.5 :average-y_ 0.27 :stdev-y_ 0.24 :min-y_
+  0.57 :max-y_ 0.34 :average-u_ 0.74 :stdev-u_ 0.48 :min-u_ 0.81
+  :max-u_ 0.79 :average-v_ 0.57 :stdev-v_ 0.22 :min-v_ 0.62 :max-v_
+  0.42)
+ (obj-30047 :x 795.0 :y -77.0 :z 0.0 :width 30.0 :height 40.32
+  :average-y 93.0 :stdev-y 19.89 :min-y 43.0 :max-y 140.0 :average-u
+  97.0 :stdev-u 7.2 :min-u 74.0 :max-u 123.0 :average-v 90.0 :stdev-v
+  9.08 :min-v 65.0 :max-v 116.0 :x_ 0.66 :y_ 0.45 :z_ 0.5 :width_
+  0.23 :height_ 0.14 :average-y_ 0.47 :stdev-y_ 0.35 :min-y_ 0.5
+  :max-y_ 0.37 :average-u_ 0.19 :stdev-u_ 0.29 :min-u_ 0.27 :max-u_
+  0.19 :average-v_ 0.36 :stdev-v_ 0.48 :min-v_ 0.38 :max-v_ 0.3)
+ (obj-30049 :x 933.0 :y 193.0 :z 0.0 :width 79.5 :height 55.64
+  :average-y 69.0 :stdev-y 30.48 :min-y 32.0 :max-y 121.0 :average-u
+  106.0 :stdev-u 10.96 :min-u 79.0 :max-u 123.0 :average-v 172.0
+  :stdev-v 15.82 :min-v 142.0 :max-v 201.0 :x_ 0.76 :y_ 0.67 :z_ 0.5
+  :width_ 0.55 :height_ 0.18 :average-y_ 0.3 :stdev-y_ 0.55 :min-y_
+  0.31 :max-y_ 0.26 :average-u_ 0.24 :stdev-u_ 0.44 :min-u_ 0.3
+  :max-u_ 0.19 :average-v_ 0.97 :stdev-v_ 0.75 :min-v_ 0.92 :max-v_
+  1.0))</pre>
+</td>
+<td class="separator"></td>
+<td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 80.0 :y -350.0 :orientation 0.56 :x_
+  0.15 :y_ 0.24)
+ (obj-30084 :x 472.0 :y 146.0 :z 0.0 :width 104.0 :height 208.69
+  :average-y 207.0 :stdev-y 42.52 :min-y 43.0 :max-y 246.0 :average-u
+  144.0 :stdev-u 8.02 :min-u 128.0 :max-u 186.0 :average-v 43.0
+  :stdev-v 13.84 :min-v 25.0 :max-v 127.0 :x_ 0.43 :y_ 0.63 :z_ 0.5
+  :width_ 0.71 :height_ 0.62 :average-y_ 1.0 :stdev-y_ 0.77 :min-y_
+  0.5 :max-y_ 0.99 :average-u_ 0.45 :stdev-u_ 0.32 :min-u_ 0.62
+  :max-u_ 0.51 :average-v_ 0.0 :stdev-v_ 0.67 :min-v_ 0.1 :max-v_
+  0.41)
+ (obj-30089 :x 535.0 :y -214.0 :z 0.0 :width 55.5 :height 116.95
+  :average-y 129.0 :stdev-y 39.89 :min-y 37.0 :max-y 200.0 :average-u
+  207.0 :stdev-u 17.1 :min-u 145.0 :max-u 233.0 :average-v 121.0
+  :stdev-v 4.25 :min-v 104.0 :max-v 131.0 :x_ 0.48 :y_ 0.35 :z_ 0.5
+  :width_ 0.4 :height_ 0.36 :average-y_ 0.73 :stdev-y_ 0.72 :min-y_
+  0.4 :max-y_ 0.72 :average-u_ 0.79 :stdev-u_ 0.67 :min-u_ 0.73
+  :max-u_ 0.75 :average-v_ 0.59 :stdev-v_ 0.29 :min-v_ 0.65 :max-v_
+  0.45)
+ (obj-30090 :x 892.0 :y -175.0 :z 0.0 :width 47.5 :height 83.9
+  :average-y 93.0 :stdev-y 21.09 :min-y 40.0 :max-y 129.0 :average-u
+  98.0 :stdev-u 7.97 :min-u 78.0 :max-u 127.0 :average-v 90.0
+  :stdev-v 9.76 :min-v 69.0 :max-v 119.0 :x_ 0.73 :y_ 0.38 :z_ 0.5
+  :width_ 0.34 :height_ 0.26 :average-y_ 0.47 :stdev-y_ 0.38 :min-y_
+  0.45 :max-y_ 0.31 :average-u_ 0.2 :stdev-u_ 0.32 :min-u_ 0.29
+  :max-u_ 0.21 :average-v_ 0.36 :stdev-v_ 0.51 :min-v_ 0.41 :max-v_
+  0.33)
+ (obj-30091 :x 874.0 :y -414.0 :z 0.0 :width 56.0 :height 127.22
+  :average-y 76.0 :stdev-y 32.34 :min-y 39.0 :max-y 141.0 :average-u
+  104.0 :stdev-u 8.78 :min-u 80.0 :max-u 124.0 :average-v 101.0
+  :stdev-v 13.19 :min-v 69.0 :max-v 122.0 :x_ 0.72 :y_ 0.19 :z_ 0.5
+  :width_ 0.4 :height_ 0.39 :average-y_ 0.35 :stdev-y_ 0.58 :min-y_
+  0.43 :max-y_ 0.38 :average-u_ 0.23 :stdev-u_ 0.35 :min-u_ 0.3
+  :max-u_ 0.2 :average-v_ 0.44 :stdev-v_ 0.64 :min-v_ 0.41 :max-v_
+  0.36)
+ (obj-30092 :x 1201.0 :y -40.0 :z 0.0 :width 104.5 :height 221.77
+  :average-y 65.0 :stdev-y 14.53 :min-y 50.0 :max-y 126.0 :average-u
+  196.0 :stdev-u 11.1 :min-u 151.0 :max-u 242.0 :average-v 121.0
+  :stdev-v 2.84 :min-v 107.0 :max-v 129.0 :x_ 0.95 :y_ 0.48 :z_ 0.5
+  :width_ 0.72 :height_ 0.65 :average-y_ 0.27 :stdev-y_ 0.26 :min-y_
+  0.63 :max-y_ 0.29 :average-u_ 0.73 :stdev-u_ 0.44 :min-u_ 0.77
+  :max-u_ 0.8 :average-v_ 0.59 :stdev-v_ 0.23 :min-v_ 0.67 :max-v_
+  0.43)
+ (obj-30093 :x 950.0 :y 305.0 :z 0.0 :width 110.5 :height 107.83
+  :average-y 74.0 :stdev-y 29.0 :min-y 35.0 :max-y 120.0 :average-u
+  107.0 :stdev-u 11.66 :min-u 81.0 :max-u 127.0 :average-v 172.0
+  :stdev-v 17.29 :min-v 139.0 :max-v 206.0 :x_ 0.77 :y_ 0.75 :z_ 0.5
+  :width_ 0.75 :height_ 0.33 :average-y_ 0.34 :stdev-y_ 0.52 :min-y_
+  0.36 :max-y_ 0.26 :average-u_ 0.25 :stdev-u_ 0.46 :min-u_ 0.31
+  :max-u_ 0.21 :average-v_ 0.97 :stdev-v_ 0.81 :min-v_ 0.89 :max-v_
+  1.0))</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="scene-3378510556"><div><table class="physical-robot-scene"><tr><td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378510556/wm-a.png"/><div class="scene-title">scene-3378510556</div>
+<div class="robot-label">robot A</div>
+<div name="obj-ids-a" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:175px;top:309px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:195px;top:220px;color:#000;;"><tt>obj-35008</tt>
+</div>
+<div class="object-label" style="left:220px;top:198px;color:#000;;"><tt>obj-35015</tt>
+</div>
+<div class="object-label" style="left:287px;top:241px;color:#000;;"><tt>obj-35017</tt>
+</div>
+<div class="object-label" style="left:255px;top:242px;color:#000;;"><tt>obj-35018</tt>
+</div>
+</div>
+<div name="pointing-a" style="display:none"><div class="cross-1" style="left:175px;top:309px;"></div>
+<div class="cross-2" style="left:175px;top:309px;"></div>
+<div class="object-label" style="left:175px;top:309px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:254px;top:311px;"></div>
+<div class="cross-2" style="left:254px;top:311px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:189px;top:211px;"></div>
+<div class="cross-2" style="left:189px;top:211px;"></div>
+<div class="object-label" style="left:195px;top:220px;color:#800;"><tt>obj-35026</tt>
+</div>
+<div class="cross-1" style="left:219px;top:161px;"></div>
+<div class="cross-2" style="left:219px;top:161px;"></div>
+<div class="object-label" style="left:220px;top:198px;color:#800;"><tt>obj-35034</tt>
+</div>
+<div class="cross-1" style="left:243px;top:210px;"></div>
+<div class="cross-2" style="left:243px;top:210px;"></div>
+<div class="object-label" style="left:220px;top:198px;color:#800;"><tt>obj-35035</tt>
+</div>
+<div class="cross-1" style="left:268px;top:249px;"></div>
+<div class="cross-2" style="left:268px;top:249px;"></div>
+<div class="object-label" style="left:255px;top:242px;color:#800;"><tt>obj-35037</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+<td class="separator"></td>
+<td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378510556/wm-b.png"/><div class="robot-label">robot B</div>
+<div name="obj-ids-b" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:309px;top:263px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:193px;top:234px;color:#000;;"><tt>obj-35026</tt>
+</div>
+<div class="object-label" style="left:180px;top:177px;color:#000;;"><tt>obj-35034</tt>
+</div>
+<div class="object-label" style="left:232px;top:197px;color:#000;;"><tt>obj-35035</tt>
+</div>
+<div class="object-label" style="left:277px;top:208px;color:#000;;"><tt>obj-35037</tt>
+</div>
+</div>
+<div name="pointing-b" style="display:none"><div class="cross-1" style="left:309px;top:263px;"></div>
+<div class="cross-2" style="left:309px;top:263px;"></div>
+<div class="object-label" style="left:309px;top:263px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:250px;top:310px;"></div>
+<div class="cross-2" style="left:250px;top:310px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:204px;top:231px;"></div>
+<div class="cross-2" style="left:204px;top:231px;"></div>
+<div class="object-label" style="left:193px;top:234px;color:#800;"><tt>obj-35008</tt>
+</div>
+<div class="cross-1" style="left:207px;top:198px;"></div>
+<div class="cross-2" style="left:207px;top:198px;"></div>
+<div class="object-label" style="left:232px;top:197px;color:#800;"><tt>obj-35015</tt>
+</div>
+<div class="cross-1" style="left:285px;top:184px;"></div>
+<div class="cross-2" style="left:285px;top:184px;"></div>
+<div class="object-label" style="left:277px;top:208px;color:#800;"><tt>obj-35017</tt>
+</div>
+<div class="cross-1" style="left:262px;top:206px;"></div>
+<div class="cross-2" style="left:262px;top:206px;"></div>
+<div class="object-label" style="left:277px;top:208px;color:#800;"><tt>obj-35018</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+</tr>
+<tr><td colspan="3" class="separator"></td>
+</tr>
+<tr name="images" style="display:none"><td class="image"><div><img src="scene-3378510556/image-a.png"/></div>
+</td>
+<td class="separator"></td>
+<td class="image"><div><img src="scene-3378510556/image-b.png"/></div>
+</td>
+</tr>
+<tr name="wms" style="display:none"><td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 50.0 :y 570.0 :orientation 0.38 :x_
+  0.13 :y_ 0.96)
+ (obj-35008 :x 725.0 :y 418.0 :z 0.0 :width 52.0 :height 104.81
+  :average-y 76.0 :stdev-y 35.37 :min-y 39.0 :max-y 149.0 :average-u
+  103.0 :stdev-u 8.95 :min-u 76.0 :max-u 123.0 :average-v 104.0
+  :stdev-v 13.07 :min-v 67.0 :max-v 124.0 :x_ 0.61 :y_ 0.84 :z_ 0.5
+  :width_ 0.37 :height_ 0.32 :average-y_ 0.35 :stdev-y_ 0.64 :min-y_
+  0.43 :max-y_ 0.43 :average-u_ 0.23 :stdev-u_ 0.36 :min-u_ 0.28
+  :max-u_ 0.19 :average-v_ 0.46 :stdev-v_ 0.64 :min-v_ 0.39 :max-v_
+  0.38)
+ (obj-35015 :x 895.0 :y 225.0 :z 0.0 :width 48.0 :height 326.22
+  :average-y 67.0 :stdev-y 10.34 :min-y 31.0 :max-y 146.0 :average-u
+  195.0 :stdev-u 10.93 :min-u 144.0 :max-u 215.0 :average-v 120.0
+  :stdev-v 2.43 :min-v 111.0 :max-v 133.0 :x_ 0.74 :y_ 0.69 :z_ 0.5
+  :width_ 0.35 :height_ 0.95 :average-y_ 0.29 :stdev-y_ 0.18 :min-y_
+  0.29 :max-y_ 0.41 :average-u_ 0.73 :stdev-u_ 0.43 :min-u_ 0.72
+  :max-u_ 0.66 :average-v_ 0.58 :stdev-v_ 0.21 :min-v_ 0.7 :max-v_
+  0.47)
+ (obj-35017 :x 567.0 :y -279.0 :z 0.0 :width 68.5 :height 118.87
+  :average-y 124.0 :stdev-y 45.32 :min-y 62.0 :max-y 222.0 :average-u
+  199.0 :stdev-u 10.8 :min-u 152.0 :max-u 226.0 :average-v 120.0
+  :stdev-v 5.13 :min-v 101.0 :max-v 132.0 :x_ 0.5 :y_ 0.29 :z_ 0.5
+  :width_ 0.48 :height_ 0.36 :average-y_ 0.69 :stdev-y_ 0.83 :min-y_
+  0.84 :max-y_ 0.85 :average-u_ 0.75 :stdev-u_ 0.43 :min-u_ 0.77
+  :max-u_ 0.72 :average-v_ 0.58 :stdev-v_ 0.32 :min-v_ 0.63 :max-v_
+  0.46)
+ (obj-35018 :x 559.0 :y -36.0 :z 0.0 :width 77.0 :height 195.88
+  :average-y 122.0 :stdev-y 24.57 :min-y 59.0 :max-y 246.0 :average-u
+  154.0 :stdev-u 6.28 :min-u 56.0 :max-u 180.0 :average-v 57.0
+  :stdev-v 7.82 :min-v 23.0 :max-v 137.0 :x_ 0.49 :y_ 0.49 :z_ 0.5
+  :width_ 0.54 :height_ 0.58 :average-y_ 0.68 :stdev-y_ 0.44 :min-y_
+  0.79 :max-y_ 0.99 :average-u_ 0.5 :stdev-u_ 0.25 :min-u_ 0.15
+  :max-u_ 0.48 :average-v_ 0.11 :stdev-v_ 0.43 :min-v_ 0.08 :max-v_
+  0.51))</pre>
+</td>
+<td class="separator"></td>
+<td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 400.0 :y -450.0 :orientation 0.62
+  :x_ 0.38 :y_ 0.16)
+ (obj-35026 :x 618.0 :y 432.0 :z 0.0 :width 59.5 :height 114.86
+  :average-y 85.0 :stdev-y 33.9 :min-y 41.0 :max-y 142.0 :average-u
+  101.0 :stdev-u 10.09 :min-u 75.0 :max-u 121.0 :average-v 102.0
+  :stdev-v 13.16 :min-v 72.0 :max-v 124.0 :x_ 0.54 :y_ 0.85 :z_ 0.5
+  :width_ 0.42 :height_ 0.35 :average-y_ 0.42 :stdev-y_ 0.61 :min-y_
+  0.47 :max-y_ 0.39 :average-u_ 0.22 :stdev-u_ 0.4 :min-u_ 0.27
+  :max-u_ 0.18 :average-v_ 0.45 :stdev-v_ 0.64 :min-v_ 0.43 :max-v_
+  0.38)
+ (obj-35034 :x 1052.0 :y 529.0 :z 0.0 :width 88.0 :height 420.17
+  :average-y 65.0 :stdev-y 17.04 :min-y 41.0 :max-y 162.0 :average-u
+  191.0 :stdev-u 10.19 :min-u 146.0 :max-u 206.0 :average-v 124.0
+  :stdev-v 2.56 :min-v 115.0 :max-v 141.0 :x_ 0.85 :y_ 0.93 :z_ 0.5
+  :width_ 0.61 :height_ 1.0 :average-y_ 0.27 :stdev-y_ 0.3 :min-y_
+  0.47 :max-y_ 0.5 :average-u_ 0.71 :stdev-u_ 0.41 :min-u_ 0.73
+  :max-u_ 0.62 :average-v_ 0.61 :stdev-v_ 0.22 :min-v_ 0.73 :max-v_
+  0.55)
+ (obj-35035 :x 902.0 :y 140.0 :z 0.0 :width 72.0 :height 135.28
+  :average-y 116.0 :stdev-y 38.88 :min-y 52.0 :max-y 166.0 :average-u
+  74.0 :stdev-u 17.09 :min-u 48.0 :max-u 112.0 :average-v 134.0
+  :stdev-v 2.43 :min-v 125.0 :max-v 143.0 :x_ 0.74 :y_ 0.62 :z_ 0.5
+  :width_ 0.5 :height_ 0.41 :average-y_ 0.64 :stdev-y_ 0.71 :min-y_
+  0.66 :max-y_ 0.52 :average-u_ 0.07 :stdev-u_ 0.67 :min-u_ 0.1
+  :max-u_ 0.14 :average-v_ 0.69 :stdev-v_ 0.21 :min-v_ 0.8 :max-v_
+  0.56)
+ (obj-35037 :x 817.0 :y -203.0 :z 0.0 :width 119.0 :height 203.39
+  :average-y 120.0 :stdev-y 22.39 :min-y 90.0 :max-y 232.0 :average-u
+  156.0 :stdev-u 11.12 :min-u 130.0 :max-u 220.0 :average-v 61.0
+  :stdev-v 13.15 :min-v 25.0 :max-v 127.0 :x_ 0.68 :y_ 0.35 :z_ 0.5
+  :width_ 0.81 :height_ 0.6 :average-y_ 0.67 :stdev-y_ 0.4 :min-y_
+  1.0 :max-y_ 0.91 :average-u_ 0.52 :stdev-u_ 0.44 :min-u_ 0.63
+  :max-u_ 0.69 :average-v_ 0.14 :stdev-v_ 0.64 :min-v_ 0.1 :max-v_
+  0.41))</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="scene-3378518034"><div><table class="physical-robot-scene"><tr><td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378518034/wm-a.png"/><div class="scene-title">scene-3378518034</div>
+<div class="robot-label">robot A</div>
+<div name="obj-ids-a" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:359px;top:238px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:324px;top:226px;color:#000;;"><tt>obj-40014</tt>
+</div>
+<div class="object-label" style="left:288px;top:206px;color:#000;;"><tt>obj-40017</tt>
+</div>
+<div class="object-label" style="left:247px;top:197px;color:#000;;"><tt>obj-40018</tt>
+</div>
+<div class="object-label" style="left:220px;top:226px;color:#000;;"><tt>obj-40019</tt>
+</div>
+<div class="object-label" style="left:252px;top:257px;color:#000;;"><tt>obj-40020</tt>
+</div>
+</div>
+<div name="pointing-a" style="display:none"><div class="cross-1" style="left:359px;top:238px;"></div>
+<div class="cross-2" style="left:359px;top:238px;"></div>
+<div class="object-label" style="left:359px;top:238px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:250px;top:310px;"></div>
+<div class="cross-2" style="left:250px;top:310px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:211px;top:238px;"></div>
+<div class="cross-2" style="left:211px;top:238px;"></div>
+<div class="object-label" style="left:220px;top:226px;color:#800;"><tt>obj-40027</tt>
+</div>
+<div class="cross-1" style="left:241px;top:179px;"></div>
+<div class="cross-2" style="left:241px;top:179px;"></div>
+<div class="object-label" style="left:247px;top:197px;color:#800;"><tt>obj-40048</tt>
+</div>
+<div class="cross-1" style="left:254px;top:265px;"></div>
+<div class="cross-2" style="left:254px;top:265px;"></div>
+<div class="object-label" style="left:252px;top:257px;color:#800;"><tt>obj-40050</tt>
+</div>
+<div class="cross-1" style="left:291px;top:237px;"></div>
+<div class="cross-2" style="left:291px;top:237px;"></div>
+<div class="object-label" style="left:288px;top:206px;color:#800;"><tt>obj-40051</tt>
+</div>
+<div class="cross-1" style="left:303px;top:189px;"></div>
+<div class="cross-2" style="left:303px;top:189px;"></div>
+<div class="object-label" style="left:288px;top:206px;color:#800;"><tt>obj-40052</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+<td class="separator"></td>
+<td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378518034/wm-b.png"/><div class="robot-label">robot B</div>
+<div name="obj-ids-b" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:143px;top:241px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:195px;top:178px;color:#000;;"><tt>obj-40027</tt>
+</div>
+<div class="object-label" style="left:262px;top:184px;color:#000;;"><tt>obj-40048</tt>
+</div>
+<div class="object-label" style="left:187px;top:228px;color:#000;;"><tt>obj-40050</tt>
+</div>
+<div class="object-label" style="left:226px;top:252px;color:#000;;"><tt>obj-40051</tt>
+</div>
+<div class="object-label" style="left:275px;top:245px;color:#000;;"><tt>obj-40052</tt>
+</div>
+</div>
+<div name="pointing-b" style="display:none"><div class="cross-1" style="left:143px;top:241px;"></div>
+<div class="cross-2" style="left:143px;top:241px;"></div>
+<div class="object-label" style="left:143px;top:241px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:256px;top:314px;"></div>
+<div class="cross-2" style="left:256px;top:314px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:254px;top:277px;"></div>
+<div class="cross-2" style="left:254px;top:277px;"></div>
+<div class="object-label" style="left:275px;top:245px;color:#800;"><tt>obj-40014</tt>
+</div>
+<div class="cross-1" style="left:259px;top:236px;"></div>
+<div class="cross-2" style="left:259px;top:236px;"></div>
+<div class="object-label" style="left:275px;top:245px;color:#800;"><tt>obj-40017</tt>
+</div>
+<div class="cross-1" style="left:252px;top:194px;"></div>
+<div class="cross-2" style="left:252px;top:194px;"></div>
+<div class="object-label" style="left:262px;top:184px;color:#800;"><tt>obj-40018</tt>
+</div>
+<div class="cross-1" style="left:215px;top:180px;"></div>
+<div class="cross-2" style="left:215px;top:180px;"></div>
+<div class="object-label" style="left:195px;top:178px;color:#800;"><tt>obj-40019</tt>
+</div>
+<div class="cross-1" style="left:199px;top:221px;"></div>
+<div class="cross-2" style="left:199px;top:221px;"></div>
+<div class="object-label" style="left:187px;top:228px;color:#800;"><tt>obj-40020</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+</tr>
+<tr><td colspan="3" class="separator"></td>
+</tr>
+<tr name="images" style="display:none"><td class="image"><div><img src="scene-3378518034/image-a.png"/></div>
+</td>
+<td class="separator"></td>
+<td class="image"><div><img src="scene-3378518034/image-b.png"/></div>
+</td>
+</tr>
+<tr name="wms" style="display:none"><td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 590.0 :y -830.0 :orientation 0.69
+  :x_ 0.52 :y_ 0.0)
+ (obj-40014 :x 681.0 :y -563.0 :z 0.0 :width 64.5 :height 40.15
+  :average-y 129.0 :stdev-y 44.89 :min-y 34.0 :max-y 211.0 :average-u
+  204.0 :stdev-u 14.81 :min-u 158.0 :max-u 230.0 :average-v 120.0
+  :stdev-v 2.56 :min-v 110.0 :max-v 129.0 :x_ 0.58 :y_ 0.07 :z_ 0.5
+  :width_ 0.45 :height_ 0.14 :average-y_ 0.73 :stdev-y_ 0.82 :min-y_
+  0.34 :max-y_ 0.79 :average-u_ 0.78 :stdev-u_ 0.59 :min-u_ 0.81
+  :max-u_ 0.74 :average-v_ 0.58 :stdev-v_ 0.22 :min-v_ 0.69 :max-v_
+  0.43)
+ (obj-40017 :x 831.0 :y -287.0 :z 0.0 :width 98.5 :height 106.95
+  :average-y 119.0 :stdev-y 34.61 :min-y 41.0 :max-y 240.0 :average-u
+  149.0 :stdev-u 6.33 :min-u 127.0 :max-u 179.0 :average-v 57.0
+  :stdev-v 10.9 :min-v 21.0 :max-v 120.0 :x_ 0.69 :y_ 0.29 :z_ 0.5
+  :width_ 0.68 :height_ 0.33 :average-y_ 0.66 :stdev-y_ 0.63 :min-y_
+  0.47 :max-y_ 0.95 :average-u_ 0.48 :stdev-u_ 0.26 :min-u_ 0.61
+  :max-u_ 0.48 :average-v_ 0.11 :stdev-v_ 0.55 :min-v_ 0.07 :max-v_
+  0.34)
+ (obj-40018 :x 900.0 :y 25.0 :z 0.0 :width 47.5 :height 254.02
+  :average-y 73.0 :stdev-y 6.49 :min-y 57.0 :max-y 111.0 :average-u
+  194.0 :stdev-u 9.25 :min-u 157.0 :max-u 219.0 :average-v 126.0
+  :stdev-v 1.1 :min-v 119.0 :max-v 132.0 :x_ 0.74 :y_ 0.53 :z_ 0.5
+  :width_ 0.34 :height_ 0.74 :average-y_ 0.33 :stdev-y_ 0.11 :min-y_
+  0.75 :max-y_ 0.21 :average-u_ 0.72 :stdev-u_ 0.37 :min-u_ 0.81
+  :max-u_ 0.68 :average-v_ 0.63 :stdev-v_ 0.16 :min-v_ 0.75 :max-v_
+  0.46)
+ (obj-40019 :x 680.0 :y 231.0 :z 0.0 :width 41.5 :height 79.99
+  :average-y 59.0 :stdev-y 25.43 :min-y 19.0 :max-y 137.0 :average-u
+  200.0 :stdev-u 16.44 :min-u 164.0 :max-u 249.0 :average-v 118.0
+  :stdev-v 5.29 :min-v 93.0 :max-v 130.0 :x_ 0.58 :y_ 0.69 :z_ 0.5
+  :width_ 0.3 :height_ 0.25 :average-y_ 0.23 :stdev-y_ 0.46 :min-y_
+  0.08 :max-y_ 0.36 :average-u_ 0.76 :stdev-u_ 0.65 :min-u_ 0.85
+  :max-u_ 0.84 :average-v_ 0.57 :stdev-v_ 0.33 :min-v_ 0.57 :max-v_
+  0.44)
+ (obj-40020 :x 448.0 :y -14.0 :z 0.0 :width 62.0 :height 144.36
+  :average-y 95.0 :stdev-y 9.61 :min-y 16.0 :max-y 110.0 :average-u
+  90.0 :stdev-u 6.05 :min-u 76.0 :max-u 123.0 :average-v 191.0
+  :stdev-v 8.09 :min-v 139.0 :max-v 206.0 :x_ 0.42 :y_ 0.5 :z_ 0.5
+  :width_ 0.44 :height_ 0.43 :average-y_ 0.49 :stdev-y_ 0.16 :min-y_
+  0.02 :max-y_ 0.2 :average-u_ 0.16 :stdev-u_ 0.24 :min-u_ 0.28
+  :max-u_ 0.19 :average-v_ 1.0 :stdev-v_ 0.44 :min-v_ 0.89 :max-v_
+  1.0))</pre>
+</td>
+<td class="separator"></td>
+<td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 570.0 :y 810.0 :orientation 0.31 :x_
+  0.5 :y_ 1.0)
+ (obj-40027 :x 1049.0 :y 418.0 :z 0.0 :width 132.0 :height 208.34
+  :average-y 80.0 :stdev-y 31.65 :min-y 32.0 :max-y 143.0 :average-u
+  209.0 :stdev-u 19.1 :min-u 142.0 :max-u 252.0 :average-v 117.0
+  :stdev-v 5.78 :min-v 94.0 :max-v 133.0 :x_ 0.85 :y_ 0.84 :z_ 0.5
+  :width_ 0.9 :height_ 0.62 :average-y_ 0.38 :stdev-y_ 0.57 :min-y_
+  0.31 :max-y_ 0.39 :average-u_ 0.8 :stdev-u_ 0.75 :min-u_ 0.71
+  :max-u_ 0.85 :average-v_ 0.56 :stdev-v_ 0.35 :min-v_ 0.58 :max-v_
+  0.47)
+ (obj-40048 :x 999.0 :y -91.0 :z 0.0 :width 63.0 :height 306.95
+  :average-y 76.0 :stdev-y 6.64 :min-y 61.0 :max-y 110.0 :average-u
+  196.0 :stdev-u 9.04 :min-u 154.0 :max-u 215.0 :average-v 127.0
+  :stdev-v 0.97 :min-v 121.0 :max-v 134.0 :x_ 0.81 :y_ 0.44 :z_ 0.5
+  :width_ 0.44 :height_ 0.89 :average-y_ 0.35 :stdev-y_ 0.11 :min-y_
+  0.82 :max-y_ 0.2 :average-u_ 0.73 :stdev-u_ 0.36 :min-u_ 0.79
+  :max-u_ 0.66 :average-v_ 0.63 :stdev-v_ 0.16 :min-v_ 0.77 :max-v_
+  0.48)
+ (obj-40050 :x 670.0 :y 482.0 :z 0.0 :width 97.5 :height 149.35
+  :average-y 70.0 :stdev-y 26.18 :min-y 26.0 :max-y 107.0 :average-u
+  104.0 :stdev-u 11.19 :min-u 81.0 :max-u 127.0 :average-v 176.0
+  :stdev-v 15.72 :min-v 139.0 :max-v 203.0 :x_ 0.57 :y_ 0.89 :z_ 0.5
+  :width_ 0.67 :height_ 0.45 :average-y_ 0.31 :stdev-y_ 0.47 :min-y_
+  0.2 :max-y_ 0.18 :average-u_ 0.23 :stdev-u_ 0.44 :min-u_ 0.31
+  :max-u_ 0.21 :average-v_ 1.0 :stdev-v_ 0.74 :min-v_ 0.89 :max-v_
+  1.0)
+ (obj-40051 :x 486.0 :y 179.0 :z 0.0 :width 49.0 :height 130.47
+  :average-y 134.0 :stdev-y 39.73 :min-y 35.0 :max-y 204.0 :average-u
+  209.0 :stdev-u 15.22 :min-u 156.0 :max-u 233.0 :average-v 123.0
+  :stdev-v 3.62 :min-v 109.0 :max-v 132.0 :x_ 0.44 :y_ 0.65 :z_ 0.5
+  :width_ 0.35 :height_ 0.4 :average-y_ 0.77 :stdev-y_ 0.72 :min-y_
+  0.36 :max-y_ 0.74 :average-u_ 0.8 :stdev-u_ 0.6 :min-u_ 0.8 :max-u_
+  0.75 :average-v_ 0.6 :stdev-v_ 0.26 :min-v_ 0.68 :max-v_ 0.46)
+ (obj-40052 :x 536.0 :y -189.0 :z 0.0 :width 112.0 :height 184.66
+  :average-y 205.0 :stdev-y 41.44 :min-y 82.0 :max-y 239.0 :average-u
+  142.0 :stdev-u 8.05 :min-u 129.0 :max-u 173.0 :average-v 37.0
+  :stdev-v 9.77 :min-v 24.0 :max-v 78.0 :x_ 0.48 :y_ 0.36 :z_ 0.5
+  :width_ 0.76 :height_ 0.55 :average-y_ 1.0 :stdev-y_ 0.75 :min-y_
+  1.0 :max-y_ 0.95 :average-u_ 0.44 :stdev-u_ 0.32 :min-u_ 0.62
+  :max-u_ 0.45 :average-v_ 0.0 :stdev-v_ 0.51 :min-v_ 0.09 :max-v_
+  0.0))</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="scene-3378525582"><div><table class="physical-robot-scene"><tr><td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378525582/wm-a.png"/><div class="scene-title">scene-3378525582</div>
+<div class="robot-label">robot A</div>
+<div name="obj-ids-a" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:138px;top:261px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:229px;top:250px;color:#000;;"><tt>obj-60148</tt>
+</div>
+<div class="object-label" style="left:267px;top:259px;color:#000;;"><tt>obj-60168</tt>
+</div>
+<div class="object-label" style="left:253px;top:217px;color:#000;;"><tt>obj-60173</tt>
+</div>
+<div class="object-label" style="left:218px;top:225px;color:#000;;"><tt>obj-60174</tt>
+</div>
+<div class="object-label" style="left:283px;top:270px;color:#000;;"><tt>obj-60177</tt>
+</div>
+</div>
+<div name="pointing-a" style="display:none"><div class="cross-1" style="left:138px;top:261px;"></div>
+<div class="cross-2" style="left:138px;top:261px;"></div>
+<div class="object-label" style="left:138px;top:261px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:253px;top:317px;"></div>
+<div class="cross-2" style="left:253px;top:317px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:221px;top:257px;"></div>
+<div class="cross-2" style="left:221px;top:257px;"></div>
+<div class="object-label" style="left:229px;top:250px;color:#800;"><tt>obj-60407</tt>
+</div>
+<div class="cross-1" style="left:261px;top:272px;"></div>
+<div class="cross-2" style="left:261px;top:272px;"></div>
+<div class="object-label" style="left:267px;top:259px;color:#800;"><tt>obj-60411</tt>
+</div>
+<div class="cross-1" style="left:263px;top:222px;"></div>
+<div class="cross-2" style="left:263px;top:222px;"></div>
+<div class="object-label" style="left:253px;top:217px;color:#800;"><tt>obj-60412</tt>
+</div>
+<div class="cross-1" style="left:203px;top:221px;"></div>
+<div class="cross-2" style="left:203px;top:221px;"></div>
+<div class="object-label" style="left:218px;top:225px;color:#800;"><tt>obj-60414</tt>
+</div>
+<div class="cross-1" style="left:275px;top:301px;"></div>
+<div class="cross-2" style="left:275px;top:301px;"></div>
+<div class="object-label" style="left:283px;top:270px;color:#800;"><tt>obj-60418</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+<td class="separator"></td>
+<td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378525582/wm-b.png"/><div class="robot-label">robot B</div>
+<div name="obj-ids-b" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:345px;top:230px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:277px;top:238px;color:#000;;"><tt>obj-60407</tt>
+</div>
+<div class="object-label" style="left:306px;top:206px;color:#000;;"><tt>obj-60411</tt>
+</div>
+<div class="object-label" style="left:261px;top:186px;color:#000;;"><tt>obj-60412</tt>
+</div>
+<div class="object-label" style="left:237px;top:241px;color:#000;;"><tt>obj-60414</tt>
+</div>
+<div class="object-label" style="left:338px;top:203px;color:#000;;"><tt>obj-60418</tt>
+</div>
+</div>
+<div name="pointing-b" style="display:none"><div class="cross-1" style="left:345px;top:230px;"></div>
+<div class="cross-2" style="left:345px;top:230px;"></div>
+<div class="object-label" style="left:345px;top:230px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:252px;top:314px;"></div>
+<div class="cross-2" style="left:252px;top:314px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:276px;top:225px;"></div>
+<div class="cross-2" style="left:276px;top:225px;"></div>
+<div class="object-label" style="left:277px;top:238px;color:#800;"><tt>obj-60148</tt>
+</div>
+<div class="cross-1" style="left:298px;top:194px;"></div>
+<div class="cross-2" style="left:298px;top:194px;"></div>
+<div class="object-label" style="left:306px;top:206px;color:#800;"><tt>obj-60168</tt>
+</div>
+<div class="cross-1" style="left:254px;top:191px;"></div>
+<div class="cross-2" style="left:254px;top:191px;"></div>
+<div class="object-label" style="left:261px;top:186px;color:#800;"><tt>obj-60173</tt>
+</div>
+<div class="cross-1" style="left:249px;top:226px;"></div>
+<div class="cross-2" style="left:249px;top:226px;"></div>
+<div class="object-label" style="left:237px;top:241px;color:#800;"><tt>obj-60174</tt>
+</div>
+<div class="cross-1" style="left:314px;top:182px;"></div>
+<div class="cross-2" style="left:314px;top:182px;"></div>
+<div class="object-label" style="left:306px;top:206px;color:#800;"><tt>obj-60177</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+</tr>
+<tr><td colspan="3" class="separator"></td>
+</tr>
+<tr name="images" style="display:none"><td class="image"><div><img src="scene-3378525582/image-a.png"/></div>
+</td>
+<td class="separator"></td>
+<td class="image"><div><img src="scene-3378525582/image-b.png"/></div>
+</td>
+</tr>
+<tr name="wms" style="display:none"><td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 420.0 :y 850.0 :orientation 0.31 :x_
+  0.4 :y_ 1.0)
+ (obj-60148 :x 499.0 :y 157.0 :z 0.0 :width 47.0 :height 146.36
+  :average-y 87.0 :stdev-y 44.18 :min-y 25.0 :max-y 141.0 :average-u
+  97.0 :stdev-u 15.84 :min-u 69.0 :max-u 124.0 :average-v 93.0
+  :stdev-v 18.19 :min-v 63.0 :max-v 125.0 :x_ 0.45 :y_ 0.64 :z_ 0.5
+  :width_ 0.34 :height_ 0.44 :average-y_ 0.43 :stdev-y_ 0.8 :min-y_
+  0.18 :max-y_ 0.38 :average-u_ 0.19 :stdev-u_ 0.63 :min-u_ 0.23
+  :max-u_ 0.2 :average-v_ 0.38 :stdev-v_ 0.84 :min-v_ 0.36 :max-v_
+  0.39)
+ (obj-60168 :x 431.0 :y -127.0 :z 0.0 :width 44.5 :height 290.09
+  :average-y 106.0 :stdev-y 14.61 :min-y 14.0 :max-y 160.0 :average-u
+  162.0 :stdev-u 8.47 :min-u 130.0 :max-u 211.0 :average-v 63.0
+  :stdev-v 8.13 :min-v 32.0 :max-v 128.0 :x_ 0.4 :y_ 0.41 :z_ 0.5
+  :width_ 0.32 :height_ 0.85 :average-y_ 0.57 :stdev-y_ 0.26 :min-y_
+  0.0 :max-y_ 0.49 :average-u_ 0.55 :stdev-u_ 0.34 :min-u_ 0.63
+  :max-u_ 0.64 :average-v_ 0.15 :stdev-v_ 0.44 :min-v_ 0.15 :max-v_
+  0.42)
+ (obj-60173 :x 751.0 :y -22.0 :z 0.0 :width 36.0 :height 58.63
+  :average-y 91.0 :stdev-y 22.58 :min-y 38.0 :max-y 135.0 :average-u
+  97.0 :stdev-u 7.48 :min-u 77.0 :max-u 118.0 :average-v 87.0
+  :stdev-v 10.0 :min-v 62.0 :max-v 114.0 :x_ 0.63 :y_ 0.5 :z_ 0.5
+  :width_ 0.27 :height_ 0.19 :average-y_ 0.46 :stdev-y_ 0.4 :min-y_
+  0.41 :max-y_ 0.35 :average-u_ 0.19 :stdev-u_ 0.3 :min-u_ 0.28
+  :max-u_ 0.17 :average-v_ 0.33 :stdev-v_ 0.52 :min-v_ 0.36 :max-v_
+  0.28)
+ (obj-60174 :x 688.0 :y 240.0 :z 0.0 :width 88.0 :height 113.7
+  :average-y 96.0 :stdev-y 45.72 :min-y 34.0 :max-y 165.0 :average-u
+  80.0 :stdev-u 17.88 :min-u 46.0 :max-u 116.0 :average-v 131.0
+  :stdev-v 2.61 :min-v 122.0 :max-v 141.0 :x_ 0.59 :y_ 0.7 :z_ 0.5
+  :width_ 0.61 :height_ 0.35 :average-y_ 0.49 :stdev-y_ 0.83 :min-y_
+  0.34 :max-y_ 0.52 :average-u_ 0.1 :stdev-u_ 0.7 :min-u_ 0.08
+  :max-u_ 0.16 :average-v_ 0.66 :stdev-v_ 0.22 :min-v_ 0.78 :max-v_
+  0.55)
+ (obj-60177 :x 351.0 :y -252.0 :z 0.0 :width 83.0 :height 160.91
+  :average-y 50.0 :stdev-y 26.48 :min-y 11.0 :max-y 212.0 :average-u
+  108.0 :stdev-u 13.2 :min-u 76.0 :max-u 152.0 :average-v 166.0
+  :stdev-v 17.15 :min-v 126.0 :max-v 202.0 :x_ 0.35 :y_ 0.32 :z_ 0.5
+  :width_ 0.58 :height_ 0.48 :average-y_ 0.17 :stdev-y_ 0.48 :min-y_
+  0.0 :max-y_ 0.79 :average-u_ 0.25 :stdev-u_ 0.52 :min-u_ 0.28
+  :max-u_ 0.34 :average-v_ 0.93 :stdev-v_ 0.8 :min-v_ 0.8 :max-v_
+  1.0))</pre>
+</td>
+<td class="separator"></td>
+<td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 650.0 :y -720.0 :orientation 0.69
+  :x_ 0.56 :y_ 0.0)
+ (obj-60407 :x 593.0 :y -203.0 :z 0.0 :width 54.0 :height 153.64
+  :average-y 84.0 :stdev-y 39.45 :min-y 30.0 :max-y 143.0 :average-u
+  99.0 :stdev-u 12.67 :min-u 73.0 :max-u 121.0 :average-v 94.0
+  :stdev-v 17.04 :min-v 62.0 :max-v 124.0 :x_ 0.52 :y_ 0.35 :z_ 0.5
+  :width_ 0.39 :height_ 0.46 :average-y_ 0.41 :stdev-y_ 0.72 :min-y_
+  0.27 :max-y_ 0.39 :average-u_ 0.21 :stdev-u_ 0.5 :min-u_ 0.26
+  :max-u_ 0.18 :average-v_ 0.39 :stdev-v_ 0.8 :min-v_ 0.36 :max-v_
+  0.38)
+ (obj-60411 :x 838.0 :y -426.0 :z 0.0 :width 81.0 :height 305.15
+  :average-y 108.0 :stdev-y 13.25 :min-y 57.0 :max-y 141.0 :average-u
+  158.0 :stdev-u 8.12 :min-u 132.0 :max-u 180.0 :average-v 69.0
+  :stdev-v 11.17 :min-v 50.0 :max-v 113.0 :x_ 0.69 :y_ 0.18 :z_ 0.5
+  :width_ 0.56 :height_ 0.89 :average-y_ 0.58 :stdev-y_ 0.23 :min-y_
+  0.75 :max-y_ 0.38 :average-u_ 0.53 :stdev-u_ 0.32 :min-u_ 0.64
+  :max-u_ 0.48 :average-v_ 0.2 :stdev-v_ 0.56 :min-v_ 0.27 :max-v_
+  0.27)
+ (obj-60412 :x 990.0 :y -81.0 :z 0.0 :width 41.5 :height 68.42
+  :average-y 92.0 :stdev-y 21.53 :min-y 32.0 :max-y 128.0 :average-u
+  97.0 :stdev-u 7.01 :min-u 76.0 :max-u 116.0 :average-v 89.0
+  :stdev-v 9.52 :min-v 65.0 :max-v 118.0 :x_ 0.8 :y_ 0.45 :z_ 0.5
+  :width_ 0.3 :height_ 0.22 :average-y_ 0.47 :stdev-y_ 0.38 :min-y_
+  0.31 :max-y_ 0.3 :average-u_ 0.19 :stdev-u_ 0.28 :min-u_ 0.28
+  :max-u_ 0.16 :average-v_ 0.35 :stdev-v_ 0.5 :min-v_ 0.38 :max-v_
+  0.32)
+ (obj-60414 :x 567.0 :y 97.0 :z 0.0 :width 52.0 :height 183.44
+  :average-y 115.0 :stdev-y 38.58 :min-y 37.0 :max-y 155.0 :average-u
+  72.0 :stdev-u 17.72 :min-u 49.0 :max-u 114.0 :average-v 135.0
+  :stdev-v 3.68 :min-v 125.0 :max-v 147.0 :x_ 0.5 :y_ 0.59 :z_ 0.5
+  :width_ 0.37 :height_ 0.55 :average-y_ 0.63 :stdev-y_ 0.7 :min-y_
+  0.4 :max-y_ 0.46 :average-u_ 0.06 :stdev-u_ 0.7 :min-u_ 0.1 :max-u_
+  0.15 :average-v_ 0.69 :stdev-v_ 0.26 :min-v_ 0.8 :max-v_ 0.6)
+ (obj-60418 :x 854.0 :y -672.0 :z 0.0 :width 82.0 :height 206.39
+  :average-y 38.0 :stdev-y 9.89 :min-y 25.0 :max-y 80.0 :average-u
+  115.0 :stdev-u 5.19 :min-u 89.0 :max-u 126.0 :average-v 155.0
+  :stdev-v 7.22 :min-v 138.0 :max-v 187.0 :x_ 0.71 :y_ 0.0 :z_ 0.5
+  :width_ 0.57 :height_ 0.61 :average-y_ 0.08 :stdev-y_ 0.17 :min-y_
+  0.18 :max-y_ 0.03 :average-u_ 0.29 :stdev-u_ 0.21 :min-u_ 0.36
+  :max-u_ 0.21 :average-v_ 0.84 :stdev-v_ 0.41 :min-v_ 0.89 :max-v_
+  0.99))</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="scene-3378526272"><div><table class="physical-robot-scene"><tr><td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378526272/wm-a.png"/><div class="scene-title">scene-3378526272</div>
+<div class="robot-label">robot A</div>
+<div name="obj-ids-a" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:138px;top:261px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:254px;top:196px;color:#000;;"><tt>obj-60264</tt>
+</div>
+<div class="object-label" style="left:294px;top:239px;color:#000;;"><tt>obj-60298</tt>
+</div>
+<div class="object-label" style="left:237px;top:250px;color:#000;;"><tt>obj-60299</tt>
+</div>
+</div>
+<div name="pointing-a" style="display:none"><div class="cross-1" style="left:138px;top:261px;"></div>
+<div class="cross-2" style="left:138px;top:261px;"></div>
+<div class="object-label" style="left:138px;top:261px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:253px;top:317px;"></div>
+<div class="cross-2" style="left:253px;top:317px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:258px;top:185px;"></div>
+<div class="cross-2" style="left:258px;top:185px;"></div>
+<div class="object-label" style="left:254px;top:196px;color:#800;"><tt>obj-60452</tt>
+</div>
+<div class="cross-1" style="left:250px;top:212px;"></div>
+<div class="cross-2" style="left:250px;top:212px;"></div>
+<div class="object-label" style="left:254px;top:196px;color:#800;"><tt>obj-60454</tt>
+</div>
+<div class="cross-1" style="left:228px;top:258px;"></div>
+<div class="cross-2" style="left:228px;top:258px;"></div>
+<div class="object-label" style="left:237px;top:250px;color:#800;"><tt>obj-60455</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+<td class="separator"></td>
+<td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378526272/wm-b.png"/><div class="robot-label">robot B</div>
+<div name="obj-ids-b" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:345px;top:230px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:224px;top:176px;color:#000;;"><tt>obj-60452</tt>
+</div>
+<div class="object-label" style="left:246px;top:194px;color:#000;;"><tt>obj-60454</tt>
+</div>
+<div class="object-label" style="left:281px;top:231px;color:#000;;"><tt>obj-60455</tt>
+</div>
+</div>
+<div name="pointing-b" style="display:none"><div class="cross-1" style="left:345px;top:230px;"></div>
+<div class="cross-2" style="left:345px;top:230px;"></div>
+<div class="object-label" style="left:345px;top:230px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:252px;top:314px;"></div>
+<div class="cross-2" style="left:252px;top:314px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:235px;top:182px;"></div>
+<div class="cross-2" style="left:235px;top:182px;"></div>
+<div class="object-label" style="left:224px;top:176px;color:#800;"><tt>obj-60264</tt>
+</div>
+<div class="cross-1" style="left:289px;top:161px;"></div>
+<div class="cross-2" style="left:289px;top:161px;"></div>
+<div class="object-label" style="left:246px;top:194px;color:#800;"><tt>obj-60298</tt>
+</div>
+<div class="cross-1" style="left:279px;top:218px;"></div>
+<div class="cross-2" style="left:279px;top:218px;"></div>
+<div class="object-label" style="left:281px;top:231px;color:#800;"><tt>obj-60299</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+</tr>
+<tr><td colspan="3" class="separator"></td>
+</tr>
+<tr name="images" style="display:none"><td class="image"><div><img src="scene-3378526272/image-a.png"/></div>
+</td>
+<td class="separator"></td>
+<td class="image"><div><img src="scene-3378526272/image-b.png"/></div>
+</td>
+</tr>
+<tr name="wms" style="display:none"><td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 420.0 :y 850.0 :orientation 0.31 :x_
+  0.4 :y_ 1.0)
+ (obj-60264 :x 908.0 :y -33.0 :z 0.0 :width 43.0 :height 237.78
+  :average-y 75.0 :stdev-y 6.81 :min-y 60.0 :max-y 140.0 :average-u
+  193.0 :stdev-u 9.68 :min-u 152.0 :max-u 209.0 :average-v 126.0
+  :stdev-v 1.49 :min-v 118.0 :max-v 136.0 :x_ 0.74 :y_ 0.49 :z_ 0.5
+  :width_ 0.31 :height_ 0.7 :average-y_ 0.34 :stdev-y_ 0.11 :min-y_
+  0.8 :max-y_ 0.37 :average-u_ 0.72 :stdev-u_ 0.39 :min-u_ 0.77
+  :max-u_ 0.63 :average-v_ 0.63 :stdev-v_ 0.18 :min-v_ 0.75 :max-v_
+  0.5)
+ (obj-60298 :x 584.0 :y -331.0 :z 0.0 :width 67.0 :height 343.55
+  :average-y 53.0 :stdev-y 9.97 :min-y 27.0 :max-y 77.0 :average-u
+  197.0 :stdev-u 5.79 :min-u 171.0 :max-u 211.0 :average-v 119.0
+  :stdev-v 2.8 :min-v 108.0 :max-v 130.0 :x_ 0.51 :y_ 0.25 :z_ 0.5
+  :width_ 0.47 :height_ 1.0 :average-y_ 0.19 :stdev-y_ 0.17 :min-y_
+  0.22 :max-y_ 0.01 :average-u_ 0.74 :stdev-u_ 0.23 :min-u_ 0.9
+  :max-u_ 0.64 :average-v_ 0.57 :stdev-v_ 0.23 :min-v_ 0.68 :max-v_
+  0.44)
+ (obj-60299 :x 498.0 :y 98.0 :z 0.0 :width 41.5 :height 280.76
+  :average-y 106.0 :stdev-y 12.75 :min-y 75.0 :max-y 156.0 :average-u
+  161.0 :stdev-u 8.13 :min-u 87.0 :max-u 185.0 :average-v 63.0
+  :stdev-v 6.43 :min-v 40.0 :max-v 97.0 :x_ 0.45 :y_ 0.59 :z_ 0.5
+  :width_ 0.3 :height_ 0.82 :average-y_ 0.57 :stdev-y_ 0.22 :min-y_
+  1.0 :max-y_ 0.47 :average-u_ 0.54 :stdev-u_ 0.33 :min-u_ 0.35
+  :max-u_ 0.51 :average-v_ 0.15 :stdev-v_ 0.37 :min-v_ 0.2 :max-v_
+  0.12))</pre>
+</td>
+<td class="separator"></td>
+<td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 650.0 :y -720.0 :orientation 0.69
+  :x_ 0.56 :y_ 0.0)
+ (obj-60452 :x 1060.0 :y 198.0 :z 0.0 :width 60.5 :height 300.75
+  :average-y 77.0 :stdev-y 12.05 :min-y 39.0 :max-y 133.0 :average-u
+  177.0 :stdev-u 35.31 :min-u 80.0 :max-u 211.0 :average-v 122.0
+  :stdev-v 13.51 :min-v 67.0 :max-v 138.0 :x_ 0.85 :y_ 0.67 :z_ 0.5
+  :width_ 0.43 :height_ 0.88 :average-y_ 0.36 :stdev-y_ 0.21 :min-y_
+  0.43 :max-y_ 0.33 :average-u_ 0.63 :stdev-u_ 1.0 :min-u_ 0.3
+  :max-u_ 0.64 :average-v_ 0.6 :stdev-v_ 0.66 :min-v_ 0.39 :max-v_
+  0.52)
+ (obj-60454 :x 928.0 :y 32.0 :z 0.0 :width 43.5 :height 76.69
+  :average-y 91.0 :stdev-y 20.95 :min-y 31.0 :max-y 129.0 :average-u
+  98.0 :stdev-u 7.18 :min-u 82.0 :max-u 120.0 :average-v 90.0
+  :stdev-v 9.4 :min-v 69.0 :max-v 120.0 :x_ 0.76 :y_ 0.54 :z_ 0.5
+  :width_ 0.32 :height_ 0.24 :average-y_ 0.46 :stdev-y_ 0.37 :min-y_
+  0.29 :max-y_ 0.31 :average-u_ 0.2 :stdev-u_ 0.29 :min-u_ 0.32
+  :max-u_ 0.18 :average-v_ 0.36 :stdev-v_ 0.49 :min-v_ 0.41 :max-v_
+  0.34)
+ (obj-60455 :x 642.0 :y -233.0 :z 0.0 :width 61.0 :height 445.47
+  :average-y 98.0 :stdev-y 27.59 :min-y 30.0 :max-y 152.0 :average-u
+  175.0 :stdev-u 16.35 :min-u 140.0 :max-u 217.0 :average-v 78.0
+  :stdev-v 26.68 :min-v 44.0 :max-v 129.0 :x_ 0.55 :y_ 0.33 :z_ 0.5
+  :width_ 0.43 :height_ 1.0 :average-y_ 0.51 :stdev-y_ 0.5 :min-y_
+  0.27 :max-y_ 0.44 :average-u_ 0.62 :stdev-u_ 0.64 :min-u_ 0.7
+  :max-u_ 0.67 :average-v_ 0.27 :stdev-v_ 1.0 :min-v_ 0.23 :max-v_
+  0.43))</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div id="scene-3378526393"><div><table class="physical-robot-scene"><tr><td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378526393/wm-a.png"/><div class="scene-title">scene-3378526393</div>
+<div class="robot-label">robot A</div>
+<div name="obj-ids-a" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:138px;top:261px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:275px;top:231px;color:#000;;"><tt>obj-60264</tt>
+</div>
+<div class="object-label" style="left:243px;top:209px;color:#000;;"><tt>obj-60300</tt>
+</div>
+<div class="object-label" style="left:254px;top:193px;color:#000;;"><tt>obj-60302</tt>
+</div>
+<div class="object-label" style="left:299px;top:246px;color:#000;;"><tt>obj-60303</tt>
+</div>
+</div>
+<div name="pointing-a" style="display:none"><div class="cross-1" style="left:138px;top:261px;"></div>
+<div class="cross-2" style="left:138px;top:261px;"></div>
+<div class="object-label" style="left:138px;top:261px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:253px;top:317px;"></div>
+<div class="cross-2" style="left:253px;top:317px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:258px;top:185px;"></div>
+<div class="cross-2" style="left:258px;top:185px;"></div>
+<div class="object-label" style="left:254px;top:193px;color:#800;"><tt>obj-60452</tt>
+</div>
+<div class="cross-1" style="left:314px;top:216px;"></div>
+<div class="cross-2" style="left:314px;top:216px;"></div>
+<div class="object-label" style="left:299px;top:246px;color:#800;"><tt>obj-60457</tt>
+</div>
+<div class="cross-1" style="left:289px;top:235px;"></div>
+<div class="cross-2" style="left:289px;top:235px;"></div>
+<div class="object-label" style="left:275px;top:231px;color:#800;"><tt>obj-60458</tt>
+</div>
+<div class="cross-1" style="left:251px;top:213px;"></div>
+<div class="cross-2" style="left:251px;top:213px;"></div>
+<div class="object-label" style="left:243px;top:209px;color:#800;"><tt>obj-60463</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+<td class="separator"></td>
+<td class="wm"><div style="position:relative"><img class="bg-image" src="scene-3378526393/wm-b.png"/><div class="robot-label">robot B</div>
+<div name="obj-ids-b" style="display:none"><div class="object-label" style="left:250px;top:316px;color:#000;;"><tt>robot-1</tt>
+</div>
+<div class="object-label" style="left:345px;top:230px;color:#000;;"><tt>robot-2</tt>
+</div>
+<div class="object-label" style="left:224px;top:176px;color:#000;;"><tt>obj-60452</tt>
+</div>
+<div class="object-label" style="left:273px;top:136px;color:#000;;"><tt>obj-60457</tt>
+</div>
+<div class="object-label" style="left:281px;top:166px;color:#000;;"><tt>obj-60458</tt>
+</div>
+<div class="object-label" style="left:247px;top:194px;color:#000;;"><tt>obj-60463</tt>
+</div>
+</div>
+<div name="pointing-b" style="display:none"><div class="cross-1" style="left:345px;top:230px;"></div>
+<div class="cross-2" style="left:345px;top:230px;"></div>
+<div class="object-label" style="left:345px;top:230px;color:#800;"><tt>robot-1</tt>
+</div>
+<div class="cross-1" style="left:252px;top:314px;"></div>
+<div class="cross-2" style="left:252px;top:314px;"></div>
+<div class="object-label" style="left:250px;top:316px;color:#800;"><tt>robot-2</tt>
+</div>
+<div class="cross-1" style="left:275px;top:176px;"></div>
+<div class="cross-2" style="left:275px;top:176px;"></div>
+<div class="object-label" style="left:281px;top:166px;color:#800;"><tt>obj-60264</tt>
+</div>
+<div class="cross-1" style="left:243px;top:197px;"></div>
+<div class="cross-2" style="left:243px;top:197px;"></div>
+<div class="object-label" style="left:247px;top:194px;color:#800;"><tt>obj-60300</tt>
+</div>
+<div class="cross-1" style="left:232px;top:181px;"></div>
+<div class="cross-2" style="left:232px;top:181px;"></div>
+<div class="object-label" style="left:224px;top:176px;color:#800;"><tt>obj-60302</tt>
+</div>
+<div class="cross-1" style="left:298px;top:159px;"></div>
+<div class="cross-2" style="left:298px;top:159px;"></div>
+<div class="object-label" style="left:281px;top:166px;color:#800;"><tt>obj-60303</tt>
+</div>
+</div>
+&#160;</div>
+</td>
+</tr>
+<tr><td colspan="3" class="separator"></td>
+</tr>
+<tr name="images" style="display:none"><td class="image"><div><img src="scene-3378526393/image-a.png"/></div>
+</td>
+<td class="separator"></td>
+<td class="image"><div><img src="scene-3378526393/image-b.png"/></div>
+</td>
+</tr>
+<tr name="wms" style="display:none"><td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 420.0 :y 850.0 :orientation 0.31 :x_
+  0.4 :y_ 1.0)
+ (obj-60264 :x 644.0 :y -188.0 :z 0.0 :width 79.5 :height 176.16
+  :average-y 67.0 :stdev-y 13.78 :min-y 35.0 :max-y 156.0 :average-u
+  197.0 :stdev-u 8.97 :min-u 152.0 :max-u 246.0 :average-v 122.0
+  :stdev-v 4.46 :min-v 93.0 :max-v 136.0 :x_ 0.56 :y_ 0.37 :z_ 0.5
+  :width_ 0.55 :height_ 0.52 :average-y_ 0.29 :stdev-y_ 0.24 :min-y_
+  0.36 :max-y_ 0.47 :average-u_ 0.74 :stdev-u_ 0.36 :min-u_ 0.77
+  :max-u_ 0.82 :average-v_ 0.6 :stdev-v_ 0.3 :min-v_ 0.57 :max-v_
+  0.5)
+ (obj-60300 :x 809.0 :y 52.0 :z 0.0 :width 35.0 :height 51.15
+  :average-y 89.0 :stdev-y 19.89 :min-y 41.0 :max-y 127.0 :average-u
+  99.0 :stdev-u 6.81 :min-u 81.0 :max-u 119.0 :average-v 89.0
+  :stdev-v 8.23 :min-v 69.0 :max-v 114.0 :x_ 0.67 :y_ 0.55 :z_ 0.5
+  :width_ 0.26 :height_ 0.17 :average-y_ 0.44 :stdev-y_ 0.35 :min-y_
+  0.47 :max-y_ 0.3 :average-u_ 0.21 :stdev-u_ 0.27 :min-u_ 0.31
+  :max-u_ 0.17 :average-v_ 0.35 :stdev-v_ 0.45 :min-v_ 0.41 :max-v_
+  0.28)
+ (obj-60302 :x 931.0 :y -34.0 :z 0.0 :width 43.5 :height 232.37
+  :average-y 74.0 :stdev-y 6.92 :min-y 60.0 :max-y 139.0 :average-u
+  193.0 :stdev-u 9.68 :min-u 154.0 :max-u 208.0 :average-v 126.0
+  :stdev-v 1.31 :min-v 119.0 :max-v 134.0 :x_ 0.76 :y_ 0.49 :z_ 0.5
+  :width_ 0.32 :height_ 0.68 :average-y_ 0.34 :stdev-y_ 0.11 :min-y_
+  0.8 :max-y_ 0.37 :average-u_ 0.72 :stdev-u_ 0.39 :min-u_ 0.79
+  :max-u_ 0.63 :average-v_ 0.63 :stdev-v_ 0.17 :min-v_ 0.75 :max-v_
+  0.48)
+ (obj-60303 :x 528.0 :y -370.0 :z 0.0 :width 61.5 :height 256.82
+  :average-y 107.0 :stdev-y 12.61 :min-y 70.0 :max-y 139.0 :average-u
+  160.0 :stdev-u 6.46 :min-u 143.0 :max-u 180.0 :average-v 64.0
+  :stdev-v 6.79 :min-v 49.0 :max-v 97.0 :x_ 0.47 :y_ 0.22 :z_ 0.5
+  :width_ 0.43 :height_ 0.75 :average-y_ 0.57 :stdev-y_ 0.22 :min-y_
+  0.98 :max-y_ 0.37 :average-u_ 0.54 :stdev-u_ 0.26 :min-u_ 0.72
+  :max-u_ 0.48 :average-v_ 0.16 :stdev-v_ 0.39 :min-v_ 0.27 :max-v_
+  0.12))</pre>
+</td>
+<td class="separator"></td>
+<td class="world-model"><pre>((robot-1 :image-schema robot :x 0.0 :y 0.0 :orientation 0.5 :x_ 0.1
+  :y_ 0.51)
+ (robot-2 :image-schema robot :x 650.0 :y -720.0 :orientation 0.69
+  :x_ 0.56 :y_ 0.0)
+ (obj-60452 :x 1060.0 :y 198.0 :z 0.0 :width 60.5 :height 300.78
+  :average-y 77.0 :stdev-y 10.81 :min-y 39.0 :max-y 133.0 :average-u
+  182.0 :stdev-u 30.16 :min-u 80.0 :max-u 211.0 :average-v 124.0
+  :stdev-v 11.32 :min-v 67.0 :max-v 138.0 :x_ 0.85 :y_ 0.67 :z_ 0.5
+  :width_ 0.43 :height_ 0.88 :average-y_ 0.36 :stdev-y_ 0.19 :min-y_
+  0.43 :max-y_ 0.33 :average-u_ 0.66 :stdev-u_ 1.0 :min-u_ 0.3
+  :max-u_ 0.64 :average-v_ 0.61 :stdev-v_ 0.57 :min-v_ 0.39 :max-v_
+  0.52)
+ (obj-60457 :x 1370.0 :y -176.0 :z 0.0 :width 250.5 :height 43.76
+  :average-y 96.0 :stdev-y 21.39 :min-y 51.0 :max-y 129.0 :average-u
+  220.0 :stdev-u 15.42 :min-u 146.0 :max-u 248.0 :average-v 112.0
+  :stdev-v 5.51 :min-v 99.0 :max-v 129.0 :x_ 1.0 :y_ 0.37 :z_ 0.5
+  :width_ 1.0 :height_ 0.15 :average-y_ 0.49 :stdev-y_ 0.38 :min-y_
+  0.64 :max-y_ 0.31 :average-u_ 0.86 :stdev-u_ 0.61 :min-u_ 0.73
+  :max-u_ 0.83 :average-v_ 0.52 :stdev-v_ 0.34 :min-v_ 0.62 :max-v_
+  0.43)
+ (obj-60458 :x 1138.0 :y -238.0 :z 0.0 :width 276.5 :height 275.33
+  :average-y 81.0 :stdev-y 30.43 :min-y 43.0 :max-y 134.0 :average-u
+  182.0 :stdev-u 18.62 :min-u 85.0 :max-u 211.0 :average-v 95.0
+  :stdev-v 29.1 :min-v 53.0 :max-v 130.0 :x_ 0.91 :y_ 0.33 :z_ 0.5
+  :width_ 1.0 :height_ 0.8 :average-y_ 0.39 :stdev-y_ 0.55 :min-y_
+  0.5 :max-y_ 0.34 :average-u_ 0.66 :stdev-u_ 0.73 :min-u_ 0.34
+  :max-u_ 0.64 :average-v_ 0.39 :stdev-v_ 1.0 :min-v_ 0.29 :max-v_
+  0.44)
+ (obj-60463 :x 928.0 :y 22.0 :z 0.0 :width 39.0 :height 76.7
+  :average-y 91.0 :stdev-y 20.91 :min-y 39.0 :max-y 127.0 :average-u
+  99.0 :stdev-u 7.2 :min-u 84.0 :max-u 117.0 :average-v 90.0 :stdev-v
+  9.57 :min-v 68.0 :max-v 115.0 :x_ 0.76 :y_ 0.53 :z_ 0.5 :width_
+  0.29 :height_ 0.24 :average-y_ 0.46 :stdev-y_ 0.37 :min-y_ 0.43
+  :max-y_ 0.3 :average-u_ 0.21 :stdev-u_ 0.29 :min-u_ 0.33 :max-u_
+  0.16 :average-v_ 0.36 :stdev-v_ 0.5 :min-v_ 0.4 :max-v_ 0.29))</pre>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
