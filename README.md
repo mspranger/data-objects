@@ -1,10 +1,10 @@
-data-objects
+QRIO-DATA-OBJECTS
 ================
 
 Object data recorded through sensorimotor systems of 2 QRIO robots. Data is available 
 in CSV or lisp files.
 
-If you find this useful, please cite 
+If you find this useful please cite 
 
 Spranger, M., Loetzsch, M., and Steels, L. (2012). A Perceptual System for Language Game Experiments. In Steels, L. and Hild, M., editors, Language Grounding in Robots, pages 89–110. Springer.
 
